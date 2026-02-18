@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TEMAS DE COLOR — para cambiar de tema, comenta un bloque
+   y descomenta el otro.
+   ============================================================ */
+
+/* ── TEMA 1: DARK INDUSTRIAL (activo) ── */
+:root {
+  --color-base:      #ffffff;  
+  --color-primary:   #3B82F6;  
+  --color-contrast:  #1aa32d;  
+  --color-text:      #000000;  
+}
+
+

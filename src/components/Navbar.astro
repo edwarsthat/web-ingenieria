@@ -1,0 +1,152 @@
+---
+import { useTranslations, languages } from '../i18n/utils';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<nav class="sticky top-0 z-50 w-full shadow-lg bg-(--color-base) border-b border-(--color-primary)">
+  <div class="w-full mx-auto px-16 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href={`/${lang}/`} class="text-xl font-bold tracking-wide no-underline text-(--color-text)">
+      <span class="text-(--color-contrast)">ING</span>ENIERA
+    </a>
+
+    <!-- Botón hamburger (mobile) -->
+    <button
+      id="hamburger"
+      class="flex flex-col gap-1.5 md:hidden bg-transparent border-none cursor-pointer p-1"
+      aria-label="Abrir menú"
+    >
+      <span class="block w-6 h-0.5 rounded transition-all duration-300 bg-(--color-text)"></span>
+      <span class="block w-6 h-0.5 rounded transition-all duration-300 bg-(--color-text)"></span>
+      <span class="block w-6 h-0.5 rounded transition-all duration-300 bg-(--color-text)"></span>
+    </button>
+
+    <!-- Links -->
+    <ul id="nav-links" class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+      <li><a href="#inicio"    class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.inicio}</a></li>
+      <li><a href="#servicios" class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.servicios}</a></li>
+      <li><a href="#nosotros"  class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.nosotros}</a></li>
+      <li><a href="#proyectos" class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.proyectos}</a></li>
+      <li>
+        <a href="#contacto" class="bg-(--color-contrast) text-(--color-base) hover:bg-(--color-primary) hover:text-(--color-text) text-sm font-semibold px-4 py-2 rounded-md no-underline transition-colors duration-200">
+          {t.nav.contacto}
+        </a>
+      </li>
+
+      <!-- Selector de idioma con dropdown -->
+      <li class="relative">
+        <button
+          id="lang-btn"
+          class="flex items-center gap-1.5 text-(--color-text)/60 hover:text-(--color-text) transition-colors duration-200 cursor-pointer bg-transparent border-none p-1"
+          aria-label="Seleccionar idioma"
+        >
+          <!-- Icono globo -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <!-- Código del idioma activo -->
+          <span class="text-xs font-semibold uppercase">{lang}</span>
+        </button>
+
+        <!-- Dropdown -->
+        <div
+          id="lang-dropdown"
+          class="hidden absolute right-0 top-10 w-36 rounded-lg border border-(--color-primary) bg-(--color-base) shadow-xl overflow-hidden z-50"
+        >
+          {Object.entries(languages).map(([code, label]) => (
+            <a
+              href={`/${code}/`}
+              class:list={[
+                "flex items-center gap-2 px-4 py-2.5 text-sm no-underline transition-colors duration-150",
+                code === lang
+                  ? "text-(--color-contrast) font-semibold bg-(--color-primary)/10"
+                  : "text-(--color-text)/70 hover:text-(--color-text) hover:bg-(--color-primary)/10"
+              ]}
+            >
+              <span class="text-xs font-bold uppercase opacity-60">{code}</span>
+              {label}
+              {code === lang && (
+                <svg class="ml-auto" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              )}
+            </a>
+          ))}
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Menú mobile desplegable -->
+  <div id="mobile-menu" class="hidden md:hidden bg-(--color-base) border-t border-(--color-primary)">
+    <ul class="flex flex-col list-none m-0 p-0 py-2">
+      <li><a href="#inicio"    class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.inicio}</a></li>
+      <li><a href="#servicios" class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.servicios}</a></li>
+      <li><a href="#nosotros"  class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.nosotros}</a></li>
+      <li><a href="#proyectos" class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.proyectos}</a></li>
+      <li class="px-6 py-3">
+        <a href="#contacto" class="inline-block bg-(--color-contrast) text-(--color-base) hover:bg-(--color-primary) hover:text-(--color-text) text-sm font-semibold px-4 py-2 rounded-md no-underline transition-colors duration-200">
+          {t.nav.contacto}
+        </a>
+      </li>
+      <!-- Idiomas en mobile -->
+      <li class="px-6 py-3 border-t border-(--color-primary)/30">
+        <div class="flex gap-2">
+          {Object.entries(languages).map(([code]) => (
+            <a
+              href={`/${code}/`}
+              class:list={[
+                "px-3 py-1.5 rounded text-sm no-underline font-bold uppercase tracking-wide transition-colors duration-150",
+                code === lang
+                  ? "bg-(--color-contrast) text-(--color-base)"
+                  : "text-(--color-text)/60 hover:text-(--color-text) border border-(--color-primary)/50"
+              ]}
+            >
+              {code}
+            </a>
+          ))}
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  hamburger?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+
+  // Dropdown idioma
+  const langBtn = document.getElementById("lang-btn");
+  const langDropdown = document.getElementById("lang-dropdown");
+
+  langBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langDropdown?.classList.toggle("hidden");
+  });
+
+  // Cerrar al hacer click fuera
+  document.addEventListener("click", () => {
+    langDropdown?.classList.add("hidden");
+  });
+</script>

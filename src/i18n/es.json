@@ -1,0 +1,9 @@
+{
+  "nav": {
+    "inicio":    "Inicio",
+    "servicios": "Servicios",
+    "nosotros":  "Nosotros",
+    "proyectos": "Proyectos",
+    "contacto":  "Contacto"
+  }
+}
