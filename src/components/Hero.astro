@@ -1,0 +1,230 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section
+  id="inicio"
+  class="hero-section relative flex items-center overflow-hidden
+         min-h-[calc(100vh-64px)] px-6 py-12 md:px-16 md:py-16"
+>
+  <!-- Fondo radial decorativo -->
+  <div class="hero-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+  <!-- Contenedor principal -->
+  <div class="relative z-10 max-w-[1200px] mx-auto w-full
+              flex flex-col-reverse items-center gap-10
+              md:flex-row md:gap-20">
+
+    <!-- ── Texto ── -->
+    <div class="flex-1 text-white text-center md:text-left">
+
+      <!-- Badge -->
+      <span class="inline-flex items-center gap-1.5 mb-7
+                   text-[0.72rem] font-bold tracking-[0.12em] uppercase
+                   text-(--color-contrast) border border-(--color-contrast)/30
+                   px-3.5 py-1.5 rounded-full">
+        {t.hero.badge}
+      </span>
+
+      <!-- Título -->
+      <h1 class="text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.15]
+                 mt-0 mb-5 text-slate-50">
+        {t.hero.h1a}<br />
+        <span class="text-(--color-primary)">{t.hero.h1b}</span>
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="text-[1.05rem] leading-[1.75] text-white/55
+                max-w-[460px] mt-0 mb-10 mx-auto md:mx-0">
+        {t.hero.sub}
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+        <a
+          href={`/${lang}/#proyectos`}
+          class="bg-(--color-primary) text-white
+                 px-7 py-3 rounded-lg font-semibold text-[0.95rem]
+                 no-underline transition-all duration-200
+                 hover:opacity-90 hover:-translate-y-px"
+        >
+          {t.hero.cta1}
+        </a>
+        <a
+          href={`/${lang}/#contacto`}
+          class="text-white/65 border border-white/20
+                 px-7 py-3 rounded-lg font-semibold text-[0.95rem]
+                 no-underline transition-all duration-200
+                 hover:text-white hover:border-white/40 hover:-translate-y-px"
+        >
+          {t.hero.cta2}
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Llama SVG ── -->
+    <div class="flex-none flex flex-col items-center gap-3" aria-hidden="true">
+
+      <!-- Etiqueta superior: eficiente (azul) -->
+      <div class="flex items-center gap-1.5
+                  text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-white/45">
+        <span class="dot-blue w-2 h-2 rounded-full shrink-0"></span>
+        {t.hero.labelBlu}
+      </div>
+
+      <!-- Wrapper para animación de respiración -->
+      <div class="flame-breathe">
+        <svg
+          class="flame-svg w-[180px] md:w-[200px] h-auto"
+          viewBox="0 0 120 200"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Animación de llama"
+        >
+          <defs>
+            <!-- Filtro de turbulencia: genera movimiento orgánico en los bordes -->
+            <filter id="flame-distort" x="-25%" y="-25%" width="150%" height="150%">
+              <feTurbulence
+                type="turbulence"
+                baseFrequency="0.025 0.01"
+                numOctaves="3"
+                seed="2"
+                result="noise"
+              >
+                <!-- Varía la frecuencia: la llama se agita a distintos ritmos -->
+                <animate
+                  attributeName="baseFrequency"
+                  values="0.02 0.008;0.042 0.016;0.025 0.012;0.015 0.006;0.032 0.011;0.02 0.008"
+                  dur="5s"
+                  repeatCount="indefinite"
+                />
+                <!-- Cambia el patrón de ruido: nunca repite el mismo movimiento -->
+                <animate
+                  attributeName="seed"
+                  values="2;7;3;9;5;2"
+                  dur="13s"
+                  repeatCount="indefinite"
+                />
+              </feTurbulence>
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="8"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+
+          <ellipse class="flame-halo" cx="60" cy="190" rx="42" ry="10" />
+
+          <!-- Capas exterior y media con distorsión orgánica -->
+          <g filter="url(#flame-distort)">
+            <path class="flame-outer"
+              d="M60,192 C15,172 -8,138 10,93 C26,52 20,22 60,4
+                 C100,22 94,52 110,93 C128,138 105,172 60,192Z"/>
+            <path class="flame-mid"
+              d="M60,172 C30,155 22,128 34,96 C44,68 44,44 60,26
+                 C76,44 76,68 86,96 C98,128 90,155 60,172Z"/>
+          </g>
+
+          <!-- Núcleo sin filtro: la parte más caliente es la más estable -->
+          <path class="flame-core"
+            d="M60,150 C44,138 39,114 47,92 C53,75 56,60 60,46
+               C64,60 67,75 73,92 C81,114 76,138 60,150Z"/>
+        </svg>
+      </div>
+
+      <!-- Etiqueta inferior: ineficiente (rojo) -->
+      <div class="flex items-center gap-1.5
+                  text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-white/45">
+        <span class="dot-red w-2 h-2 rounded-full shrink-0"></span>
+        {t.hero.labelRed}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Fondo oscuro del hero — no existe variable de tema para esto */
+  .hero-section {
+    background: linear-gradient(135deg, #080c10 0%, #0d1117 60%, #080c18 100%);
+  }
+
+  /* Halos de fondo radiales decorativos */
+  .hero-bg {
+    background:
+      radial-gradient(ellipse 60% 60% at 72% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 30% 30%, rgba(255, 69,   0,   0.04) 0%, transparent 60%);
+  }
+
+  /* ── Llama: estados iniciales ── */
+  .flame-svg   { animation: flame-glow-shift 5s ease-in-out infinite alternate; }
+  .flame-halo  { fill: #ff4500; opacity: 0.2; animation: halo-color  5s ease-in-out infinite alternate; }
+  .flame-outer { fill: #e63000;               animation: outer-color 5s ease-in-out infinite alternate; }
+  .flame-mid   { fill: #ff7700;               animation: mid-color   5s ease-in-out infinite alternate; }
+  .flame-core  { fill: #ffe566;               animation: core-color  5s ease-in-out infinite alternate; }
+
+  /* ── Keyframes de color: rojo → azul ── */
+  @keyframes outer-color {
+    0%   { fill: #e63000; }
+    35%  { fill: #cc4400; }
+    70%  { fill: #1a4db5; }
+    100% { fill: #1565c0; }
+  }
+  @keyframes mid-color {
+    0%   { fill: #ff7700; }
+    35%  { fill: #ff9500; }
+    70%  { fill: #2979ff; }
+    100% { fill: #42a5f5; }
+  }
+  @keyframes core-color {
+    0%   { fill: #ffe566; }
+    35%  { fill: #fff8e1; }
+    70%  { fill: #e8eaf6; }
+    100% { fill: #e3f2fd; }
+  }
+  @keyframes halo-color {
+    0%   { fill: #ff4500; opacity: 0.22; }
+    100% { fill: #1565c0; opacity: 0.18; }
+  }
+
+  /* Drop-shadow sincronizado */
+  @keyframes flame-glow-shift {
+    0% {
+      filter:
+        drop-shadow(0 0 18px rgba(230, 48,  0,   0.9))
+        drop-shadow(0 0 50px rgba(230, 48,  0,   0.35));
+    }
+    100% {
+      filter:
+        drop-shadow(0 0 18px rgba(21,  101, 192, 0.9))
+        drop-shadow(0 0 50px rgba(21,  101, 192, 0.35));
+    }
+  }
+
+  /* Dots de las etiquetas con glow */
+  .dot-blue { background: #42a5f5; box-shadow: 0 0 6px #42a5f5; }
+  .dot-red  { background: #e63000; box-shadow: 0 0 6px #e63000; }
+
+  /* ── Fase 2: respiración — la llama crece y se contrae desde la base ── */
+  .flame-breathe {
+    transform-origin: center bottom;
+    animation: flame-breathe 2.8s ease-in-out infinite;
+  }
+
+  @keyframes flame-breathe {
+    0%,  100% { transform: scaleY(1)    scaleX(1); }
+    35%        { transform: scaleY(1.06) scaleX(0.95); }
+    65%        { transform: scaleY(0.97) scaleX(1.02); }
+  }
+</style>

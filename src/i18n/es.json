@@ -5,5 +5,15 @@
     "nosotros":  "Nosotros",
     "proyectos": "Proyectos",
     "contacto":  "Contacto"
+  },
+  "hero": {
+    "badge":    "Eficiencia en combustión",
+    "h1a":      "De la llama roja",
+    "h1b":      "a la llama azul",
+    "sub":      "Optimizamos procesos de combustión industrial para alcanzar la máxima eficiencia energética y reducción de emisiones.",
+    "cta1":     "Ver proyectos",
+    "cta2":     "Contáctanos",
+    "labelRed": "Combustión incompleta",
+    "labelBlu": "Combustión eficiente"
   }
 }

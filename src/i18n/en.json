@@ -5,5 +5,15 @@
     "nosotros":  "About",
     "proyectos": "Projects",
     "contacto":  "Contact"
+  },
+  "hero": {
+    "badge":    "Combustion efficiency",
+    "h1a":      "From the red flame",
+    "h1b":      "to the blue flame",
+    "sub":      "We optimize industrial combustion processes to achieve maximum energy efficiency and emissions reduction.",
+    "cta1":     "View projects",
+    "cta2":     "Contact us",
+    "labelRed": "Incomplete combustion",
+    "labelBlu": "Efficient combustion"
   }
 }
