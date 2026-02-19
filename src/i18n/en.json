@@ -12,12 +12,12 @@
     "desc":     "We are a team of engineers specialized in energy efficiency and industrial combustion process optimization. With over a decade of experience, we help companies reduce their energy consumption and carbon footprint without sacrificing productivity."
   },
   "hero": {
-    "badge":    "Combustion efficiency",
-    "h1a":      "From the red flame",
-    "h1b":      "to the blue flame",
-    "sub":      "We optimize industrial combustion processes to achieve maximum energy efficiency and emissions reduction.",
-    "cta1":     "View projects",
-    "cta2":     "Contact us",
+    "badge":    "Engineering · Control · Verification",
+    "h1a":      "Less rework. Less deviation.",
+    "h1b":      "More technical control.",
+    "sub":      "We combine specialized engineering, technical supervision, and advanced inspection to ensure regulatory compliance and protect the profitability of your industrial projects.",
+    "cta1":     "Request initial assessment",
+    "cta2":     "See how we work",
     "labelRed": "Incomplete combustion",
     "labelBlu": "Efficient combustion"
   }

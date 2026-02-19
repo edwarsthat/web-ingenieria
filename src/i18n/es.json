@@ -12,12 +12,12 @@
     "desc":     "Somos un equipo de ingenieros especializados en eficiencia energética y optimización de procesos de combustión industrial. Con más de una década de experiencia, ayudamos a empresas a reducir su consumo energético y su huella de carbono sin sacrificar productividad."
   },
   "hero": {
-    "badge":    "Eficiencia en combustión",
-    "h1a":      "De la llama roja",
-    "h1b":      "a la llama azul",
-    "sub":      "Optimizamos procesos de combustión industrial para alcanzar la máxima eficiencia energética y reducción de emisiones.",
-    "cta1":     "Ver proyectos",
-    "cta2":     "Contáctanos",
+    "badge":    "Ingeniería · Control · Verificación",
+    "h1a":      "Menos reprocesos. Menos desviaciones.",
+    "h1b":      "Más control técnico.",
+    "sub":      "Combinamos ingeniería especializada, supervisión técnica e inspección avanzada para asegurar cumplimiento normativo y proteger la rentabilidad de sus proyectos industriales.",
+    "cta1":     "Solicitar evaluación inicial",
+    "cta2":     "Ver cómo trabajamos",
     "labelRed": "Combustión incompleta",
     "labelBlu": "Combustión eficiente"
   }
