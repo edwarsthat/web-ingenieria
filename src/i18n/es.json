@@ -6,6 +6,11 @@
     "proyectos": "Proyectos",
     "contacto":  "Contacto"
   },
+  "servicios": {
+    "badge":    "Lo que hacemos",
+    "titulo":   "Nuestros servicios",
+    "desc":     "Somos un equipo de ingenieros especializados en eficiencia energética y optimización de procesos de combustión industrial. Con más de una década de experiencia, ayudamos a empresas a reducir su consumo energético y su huella de carbono sin sacrificar productividad."
+  },
   "hero": {
     "badge":    "Eficiencia en combustión",
     "h1a":      "De la llama roja",

@@ -6,6 +6,11 @@
     "proyectos": "Projects",
     "contacto":  "Contact"
   },
+  "servicios": {
+    "badge":    "What we do",
+    "titulo":   "Our services",
+    "desc":     "We are a team of engineers specialized in energy efficiency and industrial combustion process optimization. With over a decade of experience, we help companies reduce their energy consumption and carbon footprint without sacrificing productivity."
+  },
   "hero": {
     "badge":    "Combustion efficiency",
     "h1a":      "From the red flame",

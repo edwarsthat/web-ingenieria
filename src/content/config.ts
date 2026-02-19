@@ -6,6 +6,7 @@ const servicios = defineCollection({
     summary: z.string(),
     icon:    z.string(),
     order:   z.number(),
+    lang:    z.enum(['es', 'en']),
   }),
 });
 

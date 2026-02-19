@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/utils';
+import ServicioCard from './servicios/ServicioCard.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const servicios = (await getCollection('servicios'))
+  .filter(s => s.data.lang === lang)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<section
+  id="servicios"
+  class="servicios-section w-full px-6 py-20 md:px-16 md:py-28"
+>
+  <div class="max-w-300 mx-auto flex flex-col md:flex-row gap-16 md:gap-24">
+
+    <!-- ── Columna izquierda: intro ── -->
+    <div class="flex-1 flex flex-col justify-center">
+
+      <span class="inline-flex items-center gap-1.5 mb-6 self-start
+                   text-[0.72rem] font-bold tracking-[0.12em] uppercase
+                   text-(--color-contrast) border border-(--color-contrast)/30
+                   px-3.5 py-1.5 rounded-full">
+        {t.servicios.badge}
+      </span>
+
+      <h2 class="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold leading-[1.15]
+                 mt-0 mb-5 text-(--color-text)">
+        {t.servicios.titulo}
+      </h2>
+
+      <p class="text-[1.05rem] leading-[1.75] text-(--color-text)/60
+                max-w-115 mt-0 mb-0">
+        {t.servicios.desc}
+      </p>
+
+    </div>
+
+    <!-- ── Columna derecha: tarjetas desde content collection ── -->
+    <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {servicios.map(s => (
+        <ServicioCard
+          titulo={s.data.title}
+          desc={s.data.summary}
+          icono={s.data.icon}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .servicios-section {
+    background: color-mix(in srgb, var(--color-primary) 6%, var(--color-base));
+  }
+</style>

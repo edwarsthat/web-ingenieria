@@ -1,8 +1,9 @@
 ---
-title: "Diagnóstico Termográfico"
+title:   "Diagnóstico Termográfico"
 summary: "Identificamos fugas de calor y frío en tu planta o edificio mediante termografía infrarroja, sin detener la operación."
-icon: "thermometer"
-order: 1
+icon:    "thermometer"
+order:   1
+lang:    "es"
 ---
 
 ## ¿En qué consiste?

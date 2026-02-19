@@ -12,14 +12,14 @@ const t = useTranslations(lang);
 
 <section
   id="inicio"
-  class="hero-section relative flex items-center overflow-hidden
-         min-h-[calc(100vh-64px)] px-6 py-12 md:px-16 md:py-16"
+  class="hero-section relative w-full flex items-start overflow-hidden
+         min-h-[calc(65vh-4rem)] px-6 pt-2 pb-12 md:px-16 md:pt-12 md:pb-16"
 >
   <!-- Fondo radial decorativo -->
-  <div class="hero-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="hero-bg absolute inset-0 pointer-events-none w-full" aria-hidden="true"></div>
 
   <!-- Contenedor principal -->
-  <div class="relative z-10 max-w-[1200px] mx-auto w-full
+  <div class="relative z-10 max-w-300 mx-auto w-full
               flex flex-col-reverse items-center gap-10
               md:flex-row md:gap-20">
 
@@ -35,15 +35,15 @@ const t = useTranslations(lang);
       </span>
 
       <!-- Título -->
-      <h1 class="text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.15]
-                 mt-0 mb-5 text-slate-50">
+      <h1 class="text-[clamp(5rem,4vw,3.4rem)] font-extrabold leading-[1.15]
+                 mt-0 mb-5 text-slate-50 ml-2">
         {t.hero.h1a}<br />
         <span class="text-(--color-primary)">{t.hero.h1b}</span>
       </h1>
 
       <!-- Subtítulo -->
       <p class="text-[1.05rem] leading-[1.75] text-white/55
-                max-w-[460px] mt-0 mb-10 mx-auto md:mx-0">
+                max-w-115 mt-0 mb-10 mx-auto md:mx-0">
         {t.hero.sub}
       </p>
 
@@ -75,7 +75,7 @@ const t = useTranslations(lang);
 
       <!-- Etiqueta superior: eficiente (azul) -->
       <div class="flex items-center gap-1.5
-                  text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-white/45">
+                  text-[0.72rem] font-semibold tracking-wider uppercase text-white/45">
         <span class="dot-blue w-2 h-2 rounded-full shrink-0"></span>
         {t.hero.labelBlu}
       </div>
@@ -83,7 +83,7 @@ const t = useTranslations(lang);
       <!-- Wrapper para animación de respiración -->
       <div class="flame-breathe">
         <svg
-          class="flame-svg w-[180px] md:w-[200px] h-auto"
+          class="flame-svg w-45 md:w-50 h-auto"
           viewBox="0 0 120 200"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -145,7 +145,7 @@ const t = useTranslations(lang);
 
       <!-- Etiqueta inferior: ineficiente (rojo) -->
       <div class="flex items-center gap-1.5
-                  text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-white/45">
+                  text-[0.72rem] font-semibold tracking-wider uppercase text-white/45">
         <span class="dot-red w-2 h-2 rounded-full shrink-0"></span>
         {t.hero.labelRed}
       </div>
