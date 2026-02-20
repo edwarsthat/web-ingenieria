@@ -11,6 +11,26 @@
     "titulo":   "Our services",
     "desc":     "We are a team of engineers specialized in energy efficiency and industrial combustion process optimization. With over a decade of experience, we help companies reduce their energy consumption and carbon footprint without sacrificing productivity."
   },
+  "nosotros": {
+    "badge":        "Who we are",
+    "titulo":       "Engineering that protects your investment",
+    "desc":         "We are a multidisciplinary team of engineers with over a combined decade of experience in energy efficiency, technical supervision, and industrial inspection. We work directly in the field so you have technical certainty at every stage of the project.",
+    "stat1Num":     "+10",
+    "stat1Lab":     "Years of experience",
+    "stat2Num":     "+120",
+    "stat2Lab":     "Completed projects",
+    "stat3Num":     "+40",
+    "stat3Lab":     "Industrial clients",
+    "stat4Num":     "25 %",
+    "stat4Lab":     "Average energy reduction",
+    "val1Tit":      "Technical rigor",
+    "val1Desc":     "We apply standardized and verifiable methodologies. Every diagnosis and report is backed by documented technical evidence.",
+    "val2Tit":      "Field presence",
+    "val2Desc":     "We don't supervise from the office. Our engineers are where processes happen to detect deviations in real time.",
+    "val3Tit":      "Commitment to results",
+    "val3Desc":     "We measure our success by the impact on your operation: fewer reworks, lower consumption, and better regulatory compliance.",
+    "cta":          "Meet our team"
+  },
   "hero": {
     "badge":    "Engineering · Control · Verification",
     "h1a":      "Less rework. Less deviation.",
