@@ -1,0 +1,79 @@
+---
+interface Props {
+  name:      string;
+  role:      string;
+  bio:       string;
+  initials:  string;
+  specialty: string[];
+  photo?:    string;
+}
+
+const { name, role, bio, initials, specialty, photo } = Astro.props;
+---
+
+<div class="equipo-card flex flex-col gap-5 p-6 rounded-2xl transition-all duration-200 hover:-translate-y-1">
+
+  <!-- Avatar + nombre -->
+  <div class="flex items-center gap-4">
+
+    <!-- Foto o iniciales -->
+    {photo ? (
+      <img
+        src={photo}
+        alt={name}
+        class="avatar-img w-14 h-14 rounded-full object-cover shrink-0"
+      />
+    ) : (
+      <div class="avatar-placeholder w-14 h-14 rounded-full flex items-center justify-center shrink-0
+                  text-lg font-extrabold text-white tracking-wide">
+        {initials}
+      </div>
+    )}
+
+    <div class="flex flex-col gap-0.5">
+      <h3 class="text-base font-bold text-(--color-text) mt-0 mb-0">
+        {name}
+      </h3>
+      <span class="text-sm font-medium text-(--color-primary)">
+        {role}
+      </span>
+    </div>
+
+  </div>
+
+  <!-- Bio -->
+  <p class="text-sm leading-relaxed text-(--color-text)/60 mt-0 mb-0">
+    {bio}
+  </p>
+
+  <!-- Tags de especialidad -->
+  <div class="flex flex-wrap gap-2 mt-auto">
+    {specialty.map(tag => (
+      <span class="specialty-tag text-[0.7rem] font-semibold px-2.5 py-1 rounded-full">
+        {tag}
+      </span>
+    ))}
+  </div>
+
+</div>
+
+<style>
+  .equipo-card {
+    background: var(--color-base);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
+  }
+  .equipo-card:hover {
+    border-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 8%, transparent);
+  }
+
+  .avatar-placeholder {
+    background: var(--color-primary);
+  }
+
+  .specialty-tag {
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+</style>

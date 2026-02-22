@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import { useTranslations } from '../i18n/utils';
 import type { Lang } from '../i18n/utils';
-import ServicioCard from './servicios/ServicioCard.astro';
+import EquipoCard from './equipo/EquipoCard.astro';
 
 interface Props {
   lang: Lang;
@@ -11,18 +11,14 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const servicios = (await getCollection('servicios'))
-  .filter(s => s.data.lang === lang)
+const miembros = (await getCollection('equipo'))
+  .filter(m => m.data.lang === lang)
   .sort((a, b) => a.data.order - b.data.order);
-
-/* Los tres tonos de azul de los pilares:
-   1 → azul profundo   2 → azul principal   3 → azul cielo */
-const pillarColors = ['#1E3A8A', '#2563EB', '#0369A1'];
 ---
 
 <section
-  id="servicios"
-  class="servicios-section w-full px-6 pt-10 pb-18 md:px-16 md:pt-14 md:pb-28"
+  id="equipo"
+  class="equipo-section w-full px-6 pt-10 pb-18 md:px-16 md:pt-14 md:pb-28"
 >
   <div class="max-w-300 mx-auto flex flex-col gap-14">
 
@@ -33,31 +29,30 @@ const pillarColors = ['#1E3A8A', '#2563EB', '#0369A1'];
                    text-[0.72rem] font-bold tracking-[0.12em] uppercase
                    text-(--color-contrast) border border-(--color-contrast)/30
                    px-3.5 py-1.5 rounded-full">
-        {t.servicios.badge}
+        {t.equipo.badge}
       </span>
 
       <h2 class="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold leading-[1.15]
                  mt-0 mb-0 text-(--color-text)">
-        {t.servicios.titulo}
+        {t.equipo.titulo}
       </h2>
 
       <p class="text-[1.05rem] leading-[1.75] text-(--color-text)/60 mt-0 mb-0">
-        {t.servicios.desc}
+        {t.equipo.desc}
       </p>
 
     </div>
 
-    <!-- ── Tarjetas: 3 columnas ── -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {servicios.map((s, i) => (
-        <ServicioCard
-          titulo={s.data.title}
-          desc={s.data.summary}
-          icono={s.data.icon}
-          color={pillarColors[i % 3]}
-          href={`/${lang}/servicios/${s.slug}`}
-          label={t.servicios.verMas}
-          slug={s.slug}
+    <!-- ── Cards ── -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {miembros.map(m => (
+        <EquipoCard
+          name={m.data.name}
+          role={m.data.role}
+          bio={m.data.bio}
+          initials={m.data.initials}
+          specialty={m.data.specialty}
+          photo={m.data.photo}
         />
       ))}
     </div>
@@ -66,7 +61,7 @@ const pillarColors = ['#1E3A8A', '#2563EB', '#0369A1'];
 </section>
 
 <style>
-  .servicios-section {
-    background: color-mix(in srgb, var(--color-primary) 6%, var(--color-base));
+  .equipo-section {
+    background: color-mix(in srgb, var(--color-primary) 4%, var(--color-base));
   }
 </style>

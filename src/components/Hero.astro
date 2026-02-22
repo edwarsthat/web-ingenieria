@@ -21,6 +21,8 @@ const t = useTranslations(lang);
     src={heroBg.src}
     alt=""
     aria-hidden="true"
+    transition:name="hero-bg"
+    transition:animate="fade"
     class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center"
   />
 
@@ -66,7 +68,7 @@ const t = useTranslations(lang);
           {t.hero.cta1}
         </a>
         <a
-          href={`/${lang}/#contacto`}
+          href={`/${lang}/#como-trabajamos`}
           class="text-white/65 border border-white/20
                  px-7 py-3 rounded-lg font-semibold text-[0.95rem]
                  no-underline transition-all duration-200

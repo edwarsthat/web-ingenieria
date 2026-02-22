@@ -4,9 +4,10 @@ import type { Lang } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
+  altLangHrefs?: Partial<Record<Lang, string>>;
 }
 
-const { lang } = Astro.props;
+const { lang, altLangHrefs = {} } = Astro.props;
 const t = useTranslations(lang);
 ---
 
@@ -31,12 +32,11 @@ const t = useTranslations(lang);
 
     <!-- Links -->
     <ul id="nav-links" class="hidden md:flex items-center gap-8 list-none m-0 p-0">
-      <li><a href="#inicio"    class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.inicio}</a></li>
-      <li><a href="#servicios" class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.servicios}</a></li>
-      <li><a href="#nosotros"  class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.nosotros}</a></li>
-      <li><a href="#proyectos" class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.proyectos}</a></li>
+      <li><a href={`/${lang}/#inicio`}    class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.inicio}</a></li>
+      <li><a href={`/${lang}/#servicios`} class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.servicios}</a></li>
+      <li><a href={`/${lang}/#nosotros`}  class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200">{t.nav.nosotros}</a></li>
       <li>
-        <a href="#contacto" class="bg-(--color-contrast) text-(--color-base) hover:bg-(--color-primary) hover:text-(--color-text) text-sm font-semibold px-4 py-2 rounded-md no-underline transition-colors duration-200">
+        <a href={`/${lang}/contacto`} class="bg-(--color-contrast) text-(--color-base) hover:bg-(--color-primary) hover:text-(--color-text) text-sm font-semibold px-4 py-2 rounded-md no-underline transition-colors duration-200">
           {t.nav.contacto}
         </a>
       </li>
@@ -65,11 +65,11 @@ const t = useTranslations(lang);
         >
           {Object.entries(languages).map(([code, label]) => (
             <a
-              href={`/${code}/`}
+              href={code === lang ? Astro.url.pathname : (altLangHrefs[code as Lang] ?? `/${code}/`)}
               class:list={[
                 "flex items-center gap-2 px-4 py-2.5 text-sm no-underline transition-colors duration-150",
                 code === lang
-                  ? "text-(--color-contrast) font-semibold bg-(--color-primary)/10"
+                  ? "text-(--color-contrast) font-semibold bg-(--color-primary)/10 pointer-events-none"
                   : "text-(--color-text)/70 hover:text-(--color-text) hover:bg-(--color-primary)/10"
               ]}
             >
@@ -90,12 +90,11 @@ const t = useTranslations(lang);
   <!-- Menú mobile desplegable -->
   <div id="mobile-menu" class="hidden md:hidden bg-(--color-base) border-t border-(--color-primary)">
     <ul class="flex flex-col list-none m-0 p-0 py-2">
-      <li><a href="#inicio"    class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.inicio}</a></li>
-      <li><a href="#servicios" class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.servicios}</a></li>
-      <li><a href="#nosotros"  class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.nosotros}</a></li>
-      <li><a href="#proyectos" class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.proyectos}</a></li>
+      <li><a href={`/${lang}/#inicio`}    class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.inicio}</a></li>
+      <li><a href={`/${lang}/#servicios`} class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.servicios}</a></li>
+      <li><a href={`/${lang}/#nosotros`}  class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200">{t.nav.nosotros}</a></li>
       <li class="px-6 py-3">
-        <a href="#contacto" class="inline-block bg-(--color-contrast) text-(--color-base) hover:bg-(--color-primary) hover:text-(--color-text) text-sm font-semibold px-4 py-2 rounded-md no-underline transition-colors duration-200">
+        <a href={`/${lang}/contacto`} class="inline-block bg-(--color-contrast) text-(--color-base) hover:bg-(--color-primary) hover:text-(--color-text) text-sm font-semibold px-4 py-2 rounded-md no-underline transition-colors duration-200">
           {t.nav.contacto}
         </a>
       </li>
@@ -104,11 +103,11 @@ const t = useTranslations(lang);
         <div class="flex gap-2">
           {Object.entries(languages).map(([code]) => (
             <a
-              href={`/${code}/`}
+              href={code === lang ? Astro.url.pathname : (altLangHrefs[code as Lang] ?? `/${code}/`)}
               class:list={[
                 "px-3 py-1.5 rounded text-sm no-underline font-bold uppercase tracking-wide transition-colors duration-150",
                 code === lang
-                  ? "bg-(--color-contrast) text-(--color-base)"
+                  ? "bg-(--color-contrast) text-(--color-base) pointer-events-none"
                   : "text-(--color-text)/60 hover:text-(--color-text) border border-(--color-primary)/50"
               ]}
             >
@@ -122,31 +121,36 @@ const t = useTranslations(lang);
 </nav>
 
 <script>
-  // Hamburger
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobile-menu");
+  function initNavbar() {
+    const langBtn = document.getElementById("lang-btn");
 
-  hamburger?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-  });
+    // Evitar doble inicialización (transition:persist reutiliza el elemento)
+    if (!langBtn || langBtn.dataset.jsInit) return;
+    langBtn.dataset.jsInit = "1";
 
-  mobileMenu?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
+    const hamburger    = document.getElementById("hamburger");
+    const mobileMenu   = document.getElementById("mobile-menu");
+    const langDropdown = document.getElementById("lang-dropdown");
+
+    hamburger?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
     });
-  });
 
-  // Dropdown idioma
-  const langBtn = document.getElementById("lang-btn");
-  const langDropdown = document.getElementById("lang-dropdown");
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu?.classList.add("hidden");
+      });
+    });
 
-  langBtn?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    langDropdown?.classList.toggle("hidden");
-  });
+    langBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      langDropdown?.classList.toggle("hidden");
+    });
 
-  // Cerrar al hacer click fuera
-  document.addEventListener("click", () => {
-    langDropdown?.classList.add("hidden");
-  });
+    document.addEventListener("click", () => {
+      langDropdown?.classList.add("hidden");
+    });
+  }
+
+  document.addEventListener("astro:page-load", initNavbar);
 </script>

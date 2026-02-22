@@ -9,7 +9,12 @@
   "servicios": {
     "badge":    "What we do",
     "titulo":   "Our services",
-    "desc":     "We are a team of engineers specialized in energy efficiency and industrial combustion process optimization. With over a decade of experience, we help companies reduce their energy consumption and carbon footprint without sacrificing productivity."
+    "desc":     "We are a team of engineers specialized in energy efficiency and industrial combustion process optimization. With over a decade of experience, we help companies reduce their energy consumption and carbon footprint without sacrificing productivity.",
+    "verMas":   "View service",
+    "volver":   "Back to services",
+    "ctaTitulo": "Does this service apply to your project?",
+    "ctaDesc":   "Contact us for a free initial assessment. We analyze your case and define the exact scope of work.",
+    "ctaBoton":  "Request assessment"
   },
   "nosotros": {
     "badge":        "Who we are",
@@ -30,6 +35,31 @@
     "val3Tit":      "Commitment to results",
     "val3Desc":     "We measure our success by the impact on your operation: fewer reworks, lower consumption, and better regulatory compliance.",
     "cta":          "Meet our team"
+  },
+  "equipo": {
+    "badge":  "The people behind it",
+    "titulo": "The team behind the work",
+    "desc":   "Engineers with real field experience. Every project is handled directly by the professionals you will meet on-site."
+  },
+  "comoTrabajamos": {
+    "badge":      "Our process",
+    "titulo":     "A clear process at every stage",
+    "desc":       "Every project follows a structured methodology: rigorous diagnosis, tailored technical proposal, field execution, and documented delivery.",
+    "step1Title": "Initial diagnosis",
+    "step1Desc":  "We assess real operating conditions, gather technical parameters, and define the exact scope of work to be performed.",
+    "step2Title": "Technical proposal",
+    "step2Desc":  "We present the work plan: methods, applicable standards, schedule, and concrete deliverables tailored to your project.",
+    "step3Title": "Field execution",
+    "step3Desc":  "Our engineers work directly on-site — engineering, supervision, or inspection — with systematic records at every stage.",
+    "step4Title": "Closing report",
+    "step4Desc":  "We deliver complete, traceable technical documentation ready for audit, investment decision, or contractual settlement."
+  },
+  "footer": {
+    "desc":         "Specialized engineering in energy efficiency and industrial technical supervision.",
+    "navTitle":     "Navigation",
+    "contactTitle": "Contact",
+    "rights":       "All rights reserved.",
+    "location":     "Colombia"
   },
   "hero": {
     "badge":    "Engineering · Control · Verification",

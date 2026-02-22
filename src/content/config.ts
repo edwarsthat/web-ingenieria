@@ -7,7 +7,21 @@ const servicios = defineCollection({
     icon:    z.string(),
     order:   z.number(),
     lang:    z.enum(['es', 'en']),
+    photo:   z.string().optional(),
   }),
 });
 
-export const collections = { servicios };
+const equipo = defineCollection({
+  schema: z.object({
+    name:       z.string(),
+    role:       z.string(),
+    bio:        z.string(),
+    initials:   z.string(),
+    specialty:  z.array(z.string()),
+    order:      z.number(),
+    lang:       z.enum(['es', 'en']),
+    photo:      z.string().optional(),
+  }),
+});
+
+export const collections = { servicios, equipo };

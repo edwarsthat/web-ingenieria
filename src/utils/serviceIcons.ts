@@ -1,0 +1,36 @@
+export const serviceIcons: Record<string, string> = {
+  thermometer: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>`,
+
+  audit: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M11 8v3m0 0v3m0-3h3m-3 0H8"/>`,
+
+  optimize: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M4 6h16M4 12h16M4 18h16"/>
+    <circle cx="9"  cy="6"  r="2" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <circle cx="15" cy="12" r="2" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <circle cx="9"  cy="18" r="2" stroke-width="1.8" fill="none" stroke-linecap="round"/>`,
+
+  emissions: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M12 3C8 3 5 6.5 5 10c0 5 7 11 7 11s7-6 7-11c0-3.5-3-7-7-7z"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>`,
+
+  engineering: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"/>`,
+
+  fact_check: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2 2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2z"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M9 12l2 2 4-4"/>`,
+
+  search: `<circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M21 21l-4.35-4.35"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+    d="M11 8v3m0 3h.01"/>`,
+};

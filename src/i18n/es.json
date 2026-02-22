@@ -9,7 +9,12 @@
   "servicios": {
     "badge":    "Lo que hacemos",
     "titulo":   "Nuestros servicios",
-    "desc":     "Somos un equipo de ingenieros especializados en eficiencia energética y optimización de procesos de combustión industrial. Con más de una década de experiencia, ayudamos a empresas a reducir su consumo energético y su huella de carbono sin sacrificar productividad."
+    "desc":     "Somos un equipo de ingenieros especializados en eficiencia energética y optimización de procesos de combustión industrial. Con más de una década de experiencia, ayudamos a empresas a reducir su consumo energético y su huella de carbono sin sacrificar productividad.",
+    "verMas":   "Ver servicio",
+    "volver":   "Volver a servicios",
+    "ctaTitulo": "¿Este servicio aplica a su proyecto?",
+    "ctaDesc":   "Contáctenos para una evaluación inicial sin costo. Analizamos su caso y definimos el alcance exacto del trabajo.",
+    "ctaBoton":  "Solicitar evaluación"
   },
   "nosotros": {
     "badge":        "Quiénes somos",
@@ -30,6 +35,31 @@
     "val3Tit":      "Compromiso con resultados",
     "val3Desc":     "Medimos nuestro éxito por el impacto en su operación: menos reprocesos, menor consumo y mayor cumplimiento normativo.",
     "cta":          "Conozca nuestro equipo"
+  },
+  "equipo": {
+    "badge":  "Quiénes lo hacen",
+    "titulo": "El equipo detrás del trabajo",
+    "desc":   "Ingenieros con experiencia real en campo. Cada proyecto es atendido directamente por los profesionales que verá en su instalación."
+  },
+  "comoTrabajamos": {
+    "badge":      "Nuestro proceso",
+    "titulo":     "Un proceso claro en cada etapa",
+    "desc":       "Cada proyecto sigue una metodología estructurada: diagnóstico riguroso, propuesta técnica a medida, ejecución en campo y entrega documentada.",
+    "step1Title": "Diagnóstico inicial",
+    "step1Desc":  "Evaluamos las condiciones reales de operación, levantamos parámetros técnicos y definimos el alcance exacto del trabajo a realizar.",
+    "step2Title": "Propuesta técnica",
+    "step2Desc":  "Presentamos el plan de trabajo: métodos, normas aplicables, cronograma y entregables concretos adaptados a su proyecto.",
+    "step3Title": "Ejecución en campo",
+    "step3Desc":  "Nuestros ingenieros trabajan directamente en sitio — diseño, supervisión o inspección — con registro sistemático de cada etapa.",
+    "step4Title": "Informe de cierre",
+    "step4Desc":  "Entregamos documentación técnica completa, trazable y lista para auditoría, decisión de inversión o liquidación contractual."
+  },
+  "footer": {
+    "desc":         "Ingeniería especializada en eficiencia energética y supervisión técnica industrial.",
+    "navTitle":     "Navegación",
+    "contactTitle": "Contacto",
+    "rights":       "Todos los derechos reservados.",
+    "location":     "Colombia"
   },
   "hero": {
     "badge":    "Ingeniería · Control · Verificación",
