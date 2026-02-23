@@ -4,6 +4,7 @@ summary: "Supervisión y control técnico en ingeniería, fabricación y montaje
 icon: "fact_check"
 order: 2
 lang: "es"
+photo: "/images/interentoria_tecnica.png"
 ---
 
 ## Interventoría Técnica

@@ -4,6 +4,7 @@ summary: "Technical control and oversight in engineering, fabrication, and assem
 icon: "fact_check"
 order: 2
 lang: "en"
+photo: "/images/interentoria_tecnica.png"
 ---
 
 ## Technical Supervision

@@ -54,6 +54,34 @@
     "step4Title": "Closing report",
     "step4Desc":  "We deliver complete, traceable technical documentation ready for audit, investment decision, or contractual settlement."
   },
+  "contacto": {
+    "titulo":             "Contact Us",
+    "subtitulo":          "Tell us about your project. Our team will respond within 24 hours.",
+    "infoTitulo":         "Contact Information",
+    "formTitulo":         "Send us a message",
+    "nombre":             "Full name",
+    "nombrePH":           "e.g. John Smith",
+    "email":              "Email address",
+    "emailPH":            "email@company.com",
+    "telefono":           "Phone",
+    "telefonoPH":         "+57 300 000 0000",
+    "empresa":            "Company",
+    "empresaPH":          "Your company name",
+    "servicio":           "Service of interest",
+    "servicioDefault":    "Select a service",
+    "mensaje":            "Message",
+    "mensajePH":          "Describe your project or inquiry...",
+    "enviar":             "Send message",
+    "horario":            "Mon–Fri · 8:00 am – 6:00 pm",
+    "ubicacion":          "Colombia",
+    "opcional":           "Optional",
+    "servicios": [
+      "Specialized Engineering Consulting",
+      "Technical Supervision",
+      "NDT & Advanced Technical Inspection",
+      "Other"
+    ]
+  },
   "footer": {
     "desc":         "Specialized engineering in energy efficiency and industrial technical supervision.",
     "navTitle":     "Navigation",

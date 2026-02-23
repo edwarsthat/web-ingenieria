@@ -54,6 +54,34 @@
     "step4Title": "Informe de cierre",
     "step4Desc":  "Entregamos documentación técnica completa, trazable y lista para auditoría, decisión de inversión o liquidación contractual."
   },
+  "contacto": {
+    "titulo":             "Contáctenos",
+    "subtitulo":          "Cuéntenos sobre su proyecto. Nuestro equipo le responderá en menos de 24 horas.",
+    "infoTitulo":         "Información de contacto",
+    "formTitulo":         "Envíenos un mensaje",
+    "nombre":             "Nombre completo",
+    "nombrePH":           "Ej: Juan Pérez",
+    "email":              "Correo electrónico",
+    "emailPH":            "correo@empresa.com",
+    "telefono":           "Teléfono",
+    "telefonoPH":         "+57 300 000 0000",
+    "empresa":            "Empresa",
+    "empresaPH":          "Nombre de su empresa",
+    "servicio":           "Servicio de interés",
+    "servicioDefault":    "Seleccione un servicio",
+    "mensaje":            "Mensaje",
+    "mensajePH":          "Describa su proyecto o consulta...",
+    "enviar":             "Enviar mensaje",
+    "horario":            "Lun–Vie · 8:00 am – 6:00 pm",
+    "ubicacion":          "Colombia",
+    "opcional":           "Opcional",
+    "servicios": [
+      "Consultoría de Ingeniería Especializada",
+      "Interventoría Técnica",
+      "END e Inspección Técnica Avanzada",
+      "Otro"
+    ]
+  },
   "footer": {
     "desc":         "Ingeniería especializada en eficiencia energética y supervisión técnica industrial.",
     "navTitle":     "Navegación",

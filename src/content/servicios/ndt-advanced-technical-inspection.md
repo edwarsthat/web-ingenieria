@@ -4,6 +4,7 @@ summary: "Non-destructive testing and advanced inspection services to verify str
 icon: "search"
 order: 3
 lang: "en"
+photo: "/images/ndt-advanced-technical-inspection.png"
 ---
 
 ## NDT & Advanced Technical Inspection
