@@ -7,7 +7,7 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    site: 'https://edwarsthat.github.io',
+    site: 'https://tu-proyecto.pages.dev',
     i18n: {
         defaultLocale: 'es',
         locales: ['es', 'en'],
