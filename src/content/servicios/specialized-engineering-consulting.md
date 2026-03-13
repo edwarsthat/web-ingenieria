@@ -4,7 +4,7 @@ summary: "Mechanical and thermal engineering development with normative criteria
 icon: "engineering"
 order: 1
 lang: "en"
-photo: "/images/consultoria-ingenieria.png"
+photo: "/images/consultoria-ingenieria.webp"
 ---
 
 ## Specialized Engineering Consulting

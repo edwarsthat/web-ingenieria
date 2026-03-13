@@ -4,7 +4,7 @@ summary: "Servicios de ensayos no destructivos e inspección avanzada para verif
 icon: "search"
 order: 3
 lang: "es"
-photo: "/images/ndt-advanced-technical-inspection.png"
+photo: "/images/ndt-advanced-technical-inspection.webp"
 ---
 
 ## END e Inspección Técnica Avanzada

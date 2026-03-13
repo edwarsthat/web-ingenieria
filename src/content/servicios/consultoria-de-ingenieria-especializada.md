@@ -4,7 +4,7 @@ summary: "Desarrollo de ingeniería mecánica y térmica con criterio normativo 
 icon: "engineering"
 order: 1
 lang: "es"
-photo: "/images/consultoria-ingenieria.png"
+photo: "/images/consultoria-ingenieria.webp"
 ---
 
 ## Consultoría de Ingeniería Especializada
