@@ -36,7 +36,7 @@ const t = useTranslations(lang);
       <!-- Badge -->
       <span class="inline-flex items-center gap-1.5 mb-7
                    text-[0.72rem] font-bold tracking-[0.12em] uppercase
-                   text-(--color-contrast) border border-(--color-contrast)/30
+                   text-(--color-green) border border-(--color-green)/30
                    px-3.5 py-1.5 rounded-full">
         {t.hero.badge}
       </span>
@@ -58,10 +58,10 @@ const t = useTranslations(lang);
       <div class="flex gap-4 flex-wrap justify-center md:justify-start">
         <a
           href={`/${lang}/contacto`}
-          class="bg-(--color-primary) text-white
+          class="bg-(--color-green) text-white
                  px-7 py-3 rounded-lg font-semibold text-[0.95rem]
                  no-underline transition-all duration-200
-                 hover:opacity-90 hover:-translate-y-px"
+                 hover:bg-(--color-green-soft) hover:text-(--color-text) hover:-translate-y-px"
         >
           {t.hero.cta1}
         </a>

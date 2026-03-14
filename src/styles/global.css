@@ -7,16 +7,20 @@
 
 /* ── TEMA 1: DARK INDUSTRIAL (activo) ── */
 :root {
-  --color-base:      #ffffff;
-  --color-primary:   #2563EB;  /* azul principal — botones, íconos */
-  --color-contrast:  #38BDF8;  /* azul eléctrico — badges, acentos  */
-  --color-text:      #000000;
+  --color-base:       #ffffff;
+
+  --color-primary:    #2563EB;  /* azul principal — botones */
+  --color-contrast:   #38BDF8;  /* azul eléctrico — acentos */
+
+  --color-green:      #22C55E;  /* verde principal — éxito, energía */
+  --color-green-soft: #16A34A;  /* verde oscuro — hover */
+
+  --color-text:       #000000;
 }
 
-/* PALETA 3 AZULES:
-   #080c10  → azul noche    (fondo hero)
-   #2563EB  → azul principal (--color-primary)
-   #38BDF8  → azul eléctrico (--color-contrast)
+/* PALETA COMPLETA:
+   #2563EB  → azul principal    (--color-primary)
+   #38BDF8  → azul eléctrico    (--color-contrast)
+   #22C55E  → verde principal   (--color-green)
+   #86EFAC  → verde claro       (--color-green-soft)
 */
-
-
