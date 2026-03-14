@@ -89,6 +89,9 @@
     "rights":       "All rights reserved.",
     "location":     "Colombia"
   },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
   "hero": {
     "badge":    "Engineering · Control · Verification",
     "h1a":      "Less rework. Less deviation.",

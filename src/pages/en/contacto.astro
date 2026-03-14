@@ -10,7 +10,7 @@ const altLangHrefs = { es: '/es/contacto' };
 ---
 
 <Layout lang="en" title="Contact — Engineering">
-  <Navbar lang="en" altLangHrefs={altLangHrefs} />
+  <Navbar slot="navbar" lang="en" altLangHrefs={altLangHrefs} />
 
   <!-- ── Header ── -->
   <section style="background:#080c10; border-bottom:1px solid rgba(37,99,235,0.15);"
@@ -275,5 +275,5 @@ const altLangHrefs = { es: '/es/contacto' };
     </div>
   </section>
 
-  <Footer lang="en" />
+  <Footer slot="footer" lang="en" />
 </Layout>

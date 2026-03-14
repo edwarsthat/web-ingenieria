@@ -89,6 +89,9 @@
     "rights":       "Todos los derechos reservados.",
     "location":     "Colombia"
   },
+  "a11y": {
+    "skipToContent": "Ir al contenido principal"
+  },
   "hero": {
     "badge":    "Ingeniería · Control · Verificación",
     "h1a":      "Menos reprocesos. Menos desviaciones.",

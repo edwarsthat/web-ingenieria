@@ -19,8 +19,13 @@ const t = useTranslations(lang);
   <!-- Imagen de fondo -->
   <img
     src={heroBg.src}
+    width={heroBg.width}
+    height={heroBg.height}
     alt=""
     aria-hidden="true"
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
     class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center"
   />
 

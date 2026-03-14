@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 const { lang, title = 'Ingeniería' } = Astro.props;
+const t = useTranslations(lang);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -22,7 +24,12 @@ const { lang, title = 'Ingeniería' } = Astro.props;
 		<ClientRouter />
 	</head>
 	<body>
-		<slot />
+		<a href="#main-content" class="skip-link">{t.a11y.skipToContent}</a>
+		<slot name="navbar" />
+		<main id="main-content" tabindex="-1">
+			<slot />
+		</main>
+		<slot name="footer" />
 	</body>
 </html>
 
@@ -32,5 +39,31 @@ const { lang, title = 'Ingeniería' } = Astro.props;
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	.skip-link {
+		position: absolute;
+		top: -100%;
+		left: 1rem;
+		z-index: 9999;
+		padding: 0.5rem 1rem;
+		background: var(--color-primary);
+		color: #fff;
+		font-size: 0.875rem;
+		font-weight: 600;
+		border-radius: 0 0 0.375rem 0.375rem;
+		text-decoration: none;
+		transition: top 0.15s;
+	}
+
+	.skip-link:focus {
+		top: 0;
+	}
+
+	/* Focus visible global */
+	*:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
+		border-radius: 3px;
 	}
 </style>

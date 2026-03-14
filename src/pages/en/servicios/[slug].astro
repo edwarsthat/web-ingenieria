@@ -28,7 +28,7 @@ const altLangHrefs = equivalenteEs
 ---
 
 <Layout lang="en" title={`${title} — Engineering`}>
-  <Navbar lang="en" altLangHrefs={altLangHrefs} />
+  <Navbar slot="navbar" lang="en" altLangHrefs={altLangHrefs} />
 
   <!-- ── Service hero ── -->
   <section class="service-hero relative w-full min-h-[42vh] flex items-end overflow-hidden">
@@ -114,7 +114,7 @@ const altLangHrefs = equivalenteEs
     </div>
   </section>
 
-  <Footer lang="en" />
+  <Footer slot="footer" lang="en" />
 </Layout>
 
 <style>
