@@ -15,5 +15,8 @@
     "embla-carousel-autoplay": "^8.6.0",
     "tailwindcss": "^4.1.18",
     "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@astrojs/cloudflare": "^13.1.3"
   }
 }
