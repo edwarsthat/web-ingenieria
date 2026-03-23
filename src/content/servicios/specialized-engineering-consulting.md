@@ -1,6 +1,6 @@
 ---
 title: "Specialized Engineering Consulting"
-summary: "Mechanical and thermal engineering development with normative criteria and a focus on real execution, energy efficiency, and technical compliance."
+summary: "We support industry in the development, optimization, and structuring of technical projects, with a special focus on thermal and energy processes."
 icon: "engineering"
 order: 1
 lang: "en"
@@ -11,6 +11,8 @@ photo: "/images/consultoria-ingenieria.webp"
 
 ### Value Proposition
 
+We support industry in the development, optimization, and structuring of technical projects, with a special focus on thermal and energy processes. Our goal is to help companies improve the performance of their processes, optimize energy use, and develop efficient and reliable technical solutions.
+
 Industrial projects fail more often at the engineering stage than during execution. Incomplete specifications, calculation reports without normative backing, and designs that ignore real operating conditions generate costly rework, delays, and avoidable technical risks.
 
 This service addresses that problem by delivering mechanical and thermal engineering developed with normative criteria, fully traceable and oriented toward real execution. The result is technical documentation that can be taken directly to fabrication, assembly, or audit without ambiguity.
@@ -19,14 +21,35 @@ This service addresses that problem by delivering mechanical and thermal enginee
 
 ### Service Scope
 
-- Development of mechanical and thermal calculation reports under applicable standards (ASME, ASTM, ISO)
-- Design of piping systems, support structures, pressure vessels, and heat transfer systems
-- Technical specifications for materials, equipment, and components
-- Basic and detailed engineering drawings
-- Review and validation of third-party engineering
-- Energy efficiency analysis of existing systems
-- Conceptualization and sizing of new projects
-- Technical criteria and selection support for equipment procurement
+#### Process Engineering
+
+- Evaluation and optimization of industrial processes
+- Energy analysis of production processes
+- Modeling and simulation of thermal systems
+- Technical diagnosis of industrial processes
+
+#### Engineering Design and Development
+
+- Mechanical design of industrial equipment and systems
+- Calculation and sizing of thermal systems
+- Conceptual, basic, and detailed engineering
+- Technical evaluation for equipment selection
+
+#### Engineering for Thermal Systems and Combustion
+
+- Optimization of industrial combustion systems
+- Evaluation and design of industrial HVAC systems
+- Design of heat generation and recovery systems
+- Efficiency improvement in thermal systems
+
+#### Energy Recovery from Waste
+
+- Assessment of the energy potential of organic waste
+- Development of biogas and energy biomass projects
+- Technical feasibility studies for waste-to-energy applications
+- Structuring of energy generation projects from waste
+
+Through this service line, we help our clients convert operational needs into technically viable and energy-efficient projects.
 
 ---
 

@@ -1,84 +1,104 @@
 ---
-title: "END e Inspección Técnica Avanzada"
-summary: "Servicios de ensayos no destructivos e inspección avanzada para verificar integridad estructural y térmica en activos industriales."
+title: "Auditoría Técnica Energética"
+summary: "Diagnósticos técnicos de eficiencia energética que combinan inspección en campo, mediciones y análisis de ingeniería para identificar oportunidades reales de mejora y reducción de costos."
 icon: "search"
 order: 3
 lang: "es"
 photo: "/images/ndt-advanced-technical-inspection.webp"
 ---
 
-## END e Inspección Técnica Avanzada
+## Auditoría Técnica Energética
 
 ### Propuesta de Valor
 
-Los activos industriales sometidos a presión, temperatura, cargas cíclicas o ambientes corrosivos desarrollan discontinuidades internas que no son visibles durante la operación normal. Soldaduras defectuosas, fisuras por fatiga, pérdida de espesor por corrosión o deformaciones térmicas no detectadas a tiempo pueden derivar en falla catastrófica, parada no programada o incumplimiento regulatorio.
+La auditoría técnica energética de SigmaPro está orientada a identificar oportunidades reales de mejora en eficiencia energética, desempeño operativo y reducción de costos energéticos en la industria.
 
-Este servicio proporciona la evidencia técnica necesaria para determinar el estado real de integridad de un activo, usando métodos de ensayo no destructivo e inspección especializada que no interrumpen la operación y generan datos objetivos para la toma de decisiones de mantenimiento, reemplazo o certificación.
+A diferencia de auditorías basadas únicamente en información documental, nuestro enfoque combina inspección técnica en campo, mediciones energéticas, evaluación del desempeño de los equipos y análisis de ingeniería de los sistemas. Esto nos permite generar diagnósticos técnicos sólidos y propuestas de mejora concretas.
 
 ---
 
 ### Alcance del Servicio
 
-- Inspección visual calificada (VT) según normas API, ASME o equivalentes
-- Ultrasonido industrial (UT): medición de espesores, detección de discontinuidades internas, phased array
-- Líquidos penetrantes (PT) y partículas magnéticas (MT) para discontinuidades superficiales y subsuperficiales
-- Termografía infrarroja activa y pasiva para evaluación de integridad térmica y detección de puntos calientes
-- Radiografía industrial (RT) para uniones soldadas y componentes críticos
-- Emisión acústica para monitoreo de estructuras bajo carga
-- Evaluación de juntas soldadas bajo códigos ASME IX, AWS D1.1 y normas equivalentes
-- Elaboración de informes técnicos de integridad con criterios de aceptación y recomendaciones de acción
+#### Sistemas Térmicos Industriales
+
+- Calderas
+- Hornos industriales
+- Sistemas de vapor
+- Sistemas de generación y recuperación de calor
+
+#### Sistemas de Refrigeración y Frío Industrial
+
+- Sistemas de refrigeración industrial
+- Cuartos fríos
+- Sistemas HVAC
+- Evaluación del desempeño energético de equipos
+
+#### Sistemas de Combustión
+
+- Evaluación del desempeño de quemadores
+- Análisis de eficiencia de combustión
+- Diagnóstico de condiciones de operación
+- Identificación de oportunidades de optimización energética
+
+#### Valorización Energética de Residuos
+
+- Diagnóstico técnico para proyectos de biogás
+- Evaluación del potencial energético de residuos orgánicos
+- Identificación de oportunidades de aprovechamiento energético
+
+Las auditorías permiten a las empresas identificar mejoras operativas, reducir costos energéticos y estructurar proyectos de modernización tecnológica.
 
 ---
 
 ### Beneficios Clave
 
-- Reducción de paradas no programadas al detectar condiciones de falla antes de que ocurran
-- Mitigación del riesgo técnico con evidencia objetiva del estado real del activo
-- Optimización energética al identificar mediante termografía pérdidas térmicas en equipos y aislamientos
-- Protección del margen del cliente al evitar reemplazos prematuros sin justificación técnica o reparaciones incorrectas
-- Cumplimiento normativo verificable con informes de inspección trazables, firmados por personal calificado bajo estándares ASNT o SNT-TC-1A
+- Identificación de oportunidades de ahorro energético con impacto directo en los costos operativos
+- Diagnósticos respaldados en mediciones reales, no en supuestos documentales
+- Priorización de inversiones de mejora según su potencial de retorno técnico y económico
+- Base técnica sólida para estructurar proyectos de modernización, eficiencia o valorización energética
+- Cumplimiento de requisitos de gestión energética bajo estándares como ISO 50001
 
 ---
 
 ### Metodología de Trabajo
 
-1. **Definición del alcance de inspección**: identificación de los activos, zonas críticas, discontinuidades de interés y normas de referencia aplicables.
-2. **Selección de métodos**: elección de la técnica o combinación de técnicas de END más adecuada para el tipo de material, geometría y condición de operación.
-3. **Preparación de superficie y condiciones de ensayo**: verificación de los requerimientos previos al ensayo para garantizar resultados confiables.
-4. **Ejecución del ensayo**: aplicación de la técnica seleccionada por personal calificado, con registro sistemático de hallazgos.
-5. **Evaluación de resultados**: interpretación de indicaciones conforme a los criterios de aceptación de la norma aplicable.
-6. **Informe técnico**: documento formal con metodología, resultados, imágenes de soporte, criterios de aceptación y recomendaciones de acción priorizadas.
+1. **Recopilación de información previa**: revisión de historiales de consumo, facturas energéticas, planos de proceso y fichas técnicas de equipos.
+2. **Visita técnica en campo**: inspección directa de los sistemas y equipos objeto de la auditoría en condiciones reales de operación.
+3. **Mediciones energéticas in situ**: análisis de combustión, medición de temperaturas, caudales, presiones y parámetros eléctricos según aplique.
+4. **Análisis de ingeniería**: procesamiento de datos y evaluación del desempeño de los sistemas frente a valores de referencia o diseño.
+5. **Identificación y cuantificación de oportunidades**: determinación del potencial de mejora en cada sistema con estimación de ahorro energético y económico.
+6. **Informe técnico de auditoría**: documento con hallazgos, diagnóstico por sistema, oportunidades priorizadas y recomendaciones de acción con horizonte de implementación.
 
 ---
 
 ### Sectores Objetivo
 
-- Generación de energía (calderas, recipientes a presión, tuberías de vapor, intercambiadores)
-- Industria metalmecánica (verificación de soldaduras, componentes estructurales y equipos fabricados)
-- Infraestructura (tanques de almacenamiento, estructuras metálicas, puentes industriales)
-- Sector minero (equipos de proceso, estructuras de soporte, sistemas hidráulicos y neumáticos)
-- Industrias con alto consumo energético (hornos, intercambiadores, sistemas de vapor y condensados)
+- Industrias con alto consumo de combustibles (plantas de alimentos, papel, cerámica, vidrio, minería)
+- Generación de energía y cogeneración industrial
+- Sector agroindustrial y de procesamiento de biomasa
+- Empresas con obligaciones de reporte o gestión energética
+- Proyectos de modernización tecnológica con potencial de valorización de residuos
 
 ---
 
 ### Diferenciación Técnica
 
-Este servicio opera como el pilar de **Verificación** dentro del modelo **Diseño + Control + Verificación**.
+Este servicio opera como el pilar de **Verificación** dentro del modelo **Diseño + Control + Verificación**, aplicado al desempeño energético de sistemas en operación.
 
-La inspección técnica avanzada no es un paso final de trámite: es la validación objetiva de que el activo fue diseñado, fabricado y montado conforme a los criterios establecidos, y que su condición actual de integridad es coherente con los requerimientos de operación. Cuando la misma organización participa en el diseño y la interventoría del activo, la inspección resulta más eficiente porque los criterios de aceptación son conocidos desde el origen del proyecto.
+La auditoría energética de SigmaPro no es un ejercicio documental: es un diagnóstico técnico que combina presencia en campo, capacidad de medición y criterio de ingeniería. Esto permite identificar oportunidades que no son visibles desde la revisión de facturas o reportes operativos, y traducirlas en proyectos con base técnica sólida.
 
 ---
 
 ### Resultados Esperados
 
-- Mapa actualizado del estado de integridad de activos críticos
-- Decisiones de mantenimiento o reemplazo respaldadas en evidencia técnica, no en estimaciones
-- Reducción de eventos de falla no programada con impacto en producción o seguridad
-- Documentación técnica de inspección disponible para auditorías regulatorias o de aseguradora
-- Extensión de vida útil justificada técnicamente en activos que aún cumplen criterios de integridad
+- Diagnóstico técnico actualizado del estado energético de los sistemas auditados
+- Identificación cuantificada de oportunidades de ahorro con estimación de impacto económico
+- Priorización de acciones según costo de implementación y potencial de retorno
+- Documentación técnica de referencia para futuros proyectos de mejora o expansión
+- Base para estructurar proyectos de eficiencia energética, cogeneración o valorización de residuos
 
 ---
 
 ### Llamado a la Acción
 
-Si requiere verificar el estado de integridad de un activo crítico, validar una soldadura antes de puesta en servicio o establecer un programa de inspección periódica, contáctenos para definir el alcance técnico y los métodos de ensayo más adecuados para su caso.
+Si desea conocer el estado energético real de sus sistemas e identificar qué mejoras pueden generar mayor impacto en sus costos operativos, contáctenos para definir el alcance de la auditoría y el plan de trabajo más adecuado para su operación.

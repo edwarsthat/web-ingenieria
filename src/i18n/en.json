@@ -18,8 +18,9 @@
   },
   "nosotros": {
     "badge":        "Who we are",
-    "titulo":       "Engineering that protects your investment",
-    "desc":         "We are a multidisciplinary team of engineers with over a combined decade of experience in energy efficiency, technical supervision, and industrial inspection. We work directly in the field so you have technical certainty at every stage of the project.",
+    "titulo":       "Engineering oriented to real results",
+    "desc":         "SigmaPro S.A.S. is an engineering company focused on developing technical solutions for industry, with a special emphasis on thermal systems, combustion, energy efficiency, and industrial project development.",
+    "desc2":        "We support our clients in the evaluation, design, optimization, and supervision of industrial projects, helping them improve process performance, reduce energy costs, and make technical decisions based on engineering analysis.",
     "stat1Num":     "+10",
     "stat1Lab":     "Years of experience",
     "stat2Num":     "+120",
@@ -32,8 +33,8 @@
     "val1Desc":     "We apply standardized and verifiable methodologies. Every diagnosis and report is backed by documented technical evidence.",
     "val2Tit":      "Field presence",
     "val2Desc":     "We don't supervise from the office. Our engineers are where processes happen to detect deviations in real time.",
-    "val3Tit":      "Commitment to results",
-    "val3Desc":     "We measure our success by the impact on your operation: fewer reworks, lower consumption, and better regulatory compliance.",
+    "val3Tit":      "Highly qualified team",
+    "val3Desc":     "Most of our professionals hold a master's degree in engineering. The team includes a doctor in engineering, allowing us to combine industrial experience with advanced technical analysis and process modeling capabilities.",
     "cta":          "Meet our team"
   },
   "equipo": {
@@ -78,7 +79,7 @@
     "servicios": [
       "Specialized Engineering Consulting",
       "Technical Supervision",
-      "NDT & Advanced Technical Inspection",
+      "Technical Energy Audit",
       "Other"
     ]
   },

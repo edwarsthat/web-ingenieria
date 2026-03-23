@@ -1,6 +1,6 @@
----
+D:\trabajo\tioAlonso\web-page\src\content\servicios\specialized-engineering-consulting.mdD:\trabajo\tioAlonso\web-page\src\content\servicios\specialized-engineering-consulting.md---
 title: "Consultoría de Ingeniería Especializada"
-summary: "Desarrollo de ingeniería mecánica y térmica con criterio normativo y enfoque en ejecución real, eficiencia energética y cumplimiento técnico."
+summary: "Apoyamos a la industria en el desarrollo, optimización y estructuración de proyectos técnicos, con enfoque especial en procesos térmicos y energéticos."
 icon: "engineering"
 order: 1
 lang: "es"
@@ -11,6 +11,8 @@ photo: "/images/consultoria-ingenieria.webp"
 
 ### Propuesta de Valor
 
+Apoyamos a la industria en el desarrollo, optimización y estructuración de proyectos técnicos, con un enfoque especial en procesos térmicos y energéticos. Nuestro objetivo es ayudar a las empresas a mejorar el desempeño de sus procesos, optimizar el uso de la energía y desarrollar soluciones técnicas eficientes y confiables.
+
 Los proyectos industriales fallan con mayor frecuencia en la etapa de ingeniería que en la ejecución. Especificaciones incompletas, memorias de cálculo sin respaldo normativo y diseños que no consideran las condiciones reales de operación generan reprocesos costosos, atrasos y riesgos técnicos evitables.
 
 Este servicio resuelve ese problema al entregar ingeniería mecánica y térmica desarrollada con criterio normativo, trazable y orientada a la ejecución real. El resultado es documentación técnica que puede llevarse a fabricación, montaje o auditoría sin ambigüedades.
@@ -19,14 +21,35 @@ Este servicio resuelve ese problema al entregar ingeniería mecánica y térmica
 
 ### Alcance del Servicio
 
-- Desarrollo de memorias de cálculo mecánico y térmico bajo normas aplicables (ASME, ASTM, ISO, NTC)
-- Diseño de sistemas de tuberías, estructuras de soporte, equipos a presión y sistemas de transferencia de calor
-- Especificaciones técnicas de materiales, equipos y componentes
-- Elaboración de planos de ingeniería básica y de detalle
-- Revisión y validación de ingeniería de terceros
-- Análisis de eficiencia energética en sistemas existentes
-- Conceptualización y dimensionamiento de proyectos nuevos
-- Selección y criterio técnico para adquisición de equipos
+#### Ingeniería de Procesos
+
+- Evaluación y optimización de procesos industriales
+- Análisis energético de procesos productivos
+- Modelamiento y simulación de sistemas térmicos
+- Diagnóstico técnico de procesos industriales
+
+#### Diseño y Desarrollo de Ingeniería
+
+- Diseño mecánico de equipos y sistemas industriales
+- Cálculo y dimensionamiento de sistemas térmicos
+- Ingeniería conceptual, básica y de detalle
+- Evaluación técnica para selección de equipos
+
+#### Ingeniería para Sistemas Térmicos y Combustión
+
+- Optimización de sistemas de combustión industrial
+- Evaluación y diseño de sistemas HVAC industriales
+- Diseño de sistemas de generación y recuperación de calor
+- Mejora de eficiencia en sistemas térmicos
+
+#### Valorización Energética de Residuos
+
+- Evaluación del potencial energético de residuos orgánicos
+- Desarrollo de proyectos de biogás y biomasa energética
+- Estudios de viabilidad técnica para aprovechamiento energético de residuos
+- Estructuración de proyectos de generación energética a partir de residuos
+
+A través de esta línea de servicio, ayudamos a nuestros clientes a convertir necesidades operativas en proyectos técnicamente viables y energéticamente eficientes.
 
 ---
 

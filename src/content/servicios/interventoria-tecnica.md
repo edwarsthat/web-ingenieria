@@ -1,6 +1,6 @@
 ---
 title: "Interventoría Técnica"
-summary: "Supervisión y control técnico en ingeniería, fabricación y montaje para reducir desviaciones y proteger el margen del proyecto."
+summary: "Acompañamiento técnico independiente para garantizar que los proyectos industriales se ejecuten conforme a los criterios de diseño, calidad y desempeño establecidos."
 icon: "fact_check"
 order: 2
 lang: "es"
@@ -11,6 +11,8 @@ photo: "/images/interentoria_tecnica.webp"
 
 ### Propuesta de Valor
 
+SigmaPro ofrece servicios de interventoría técnica especializada para garantizar que los proyectos industriales se ejecuten conforme a los criterios de diseño, calidad y desempeño establecidos. Nuestro equipo realiza un acompañamiento técnico independiente que permite reducir riesgos durante la ejecución del proyecto y asegurar el cumplimiento de los objetivos técnicos y energéticos del sistema.
+
 En proyectos industriales, las desviaciones técnicas rara vez se descubren en el momento en que ocurren. Se detectan al final, cuando el costo de corrección es significativamente mayor que el de haberlas controlado en proceso. La falta de supervisión técnica especializada durante fabricación, montaje o construcción es una de las causas más frecuentes de sobrecostos, incumplimientos de especificación y conflictos contractuales.
 
 Este servicio establece un mecanismo de control técnico continuo que verifica el cumplimiento de la ingeniería, las especificaciones y las normas aplicables en cada etapa del proyecto, protegiendo la inversión del cliente y reduciendo el margen de riesgo técnico.
@@ -19,14 +21,19 @@ Este servicio establece un mecanismo de control técnico continuo que verifica e
 
 ### Alcance del Servicio
 
-- Revisión y aprobación técnica de documentación de fabricantes y contratistas
-- Supervisión de procesos de fabricación en taller (soldadura, mecanizado, ensamble, tratamientos térmicos)
-- Control de calidad en recepción de materiales y equipos
-- Verificación de procedimientos de montaje y secuencias de instalación
-- Seguimiento al cumplimiento de especificaciones técnicas y de ingeniería
-- Emisión de reportes de avance, no conformidades y acciones correctivas
-- Participación en pruebas de recepción, precomisionamiento y comisionamiento
-- Gestión técnica de cambios de alcance durante la ejecución
+- Revisión técnica de ingeniería y especificaciones de diseño
+- Supervisión técnica de montajes e instalaciones industriales
+- Verificación del cumplimiento de estándares y especificaciones
+- Evaluación técnica durante pruebas y puesta en marcha
+- Seguimiento del desempeño operativo de los sistemas instalados
+
+Este servicio es especialmente relevante en proyectos relacionados con:
+
+- Sistemas de combustión industrial
+- Sistemas térmicos y generación de calor
+- Sistemas HVAC y refrigeración industrial
+- Instalaciones mecánicas y energéticas
+- Proyectos de valorización energética de residuos
 
 ---
 

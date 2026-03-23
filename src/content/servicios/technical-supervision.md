@@ -1,6 +1,6 @@
 ---
 title: "Technical Supervision"
-summary: "Technical control and oversight in engineering, fabrication, and assembly to reduce deviations and protect project margins."
+summary: "Independent technical oversight to ensure industrial projects are executed in accordance with established design, quality, and performance criteria."
 icon: "fact_check"
 order: 2
 lang: "en"
@@ -11,6 +11,8 @@ photo: "/images/interentoria_tecnica.webp"
 
 ### Value Proposition
 
+SigmaPro provides specialized technical supervision services to ensure that industrial projects are executed in accordance with the established design, quality, and performance criteria. Our team delivers independent technical oversight that reduces risks during project execution and ensures compliance with the technical and energy objectives of the system.
+
 In industrial projects, technical deviations are rarely discovered at the moment they occur. They surface at the end, when the cost of correction is significantly higher than it would have been to control them in process. The absence of specialized technical supervision during fabrication, assembly, or construction is one of the most frequent causes of cost overruns, specification failures, and contractual disputes.
 
 This service establishes a continuous technical control mechanism that verifies compliance with engineering, specifications, and applicable standards at every stage of the project, protecting the client's investment and reducing the margin of technical risk.
@@ -19,14 +21,19 @@ This service establishes a continuous technical control mechanism that verifies 
 
 ### Service Scope
 
-- Technical review and approval of manufacturer and contractor documentation
-- Supervision of shop fabrication processes (welding, machining, assembly, heat treatment)
-- Quality control on material and equipment reception
-- Verification of assembly procedures and installation sequences
-- Monitoring of compliance with technical and engineering specifications
-- Issuance of progress reports, non-conformities, and corrective actions
-- Participation in acceptance tests, pre-commissioning, and commissioning
-- Technical management of scope changes during execution
+- Technical review of engineering documentation and design specifications
+- Technical supervision of industrial assembly and installation works
+- Verification of compliance with applicable standards and specifications
+- Technical evaluation during testing and commissioning
+- Monitoring of the operational performance of installed systems
+
+This service is especially relevant for projects involving:
+
+- Industrial combustion systems
+- Thermal systems and heat generation
+- Industrial HVAC and refrigeration systems
+- Mechanical and energy installations
+- Waste-to-energy projects
 
 ---
 

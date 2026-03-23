@@ -18,8 +18,9 @@
   },
   "nosotros": {
     "badge":        "Quiénes somos",
-    "titulo":       "Ingeniería que protege su inversión",
-    "desc":         "Somos un equipo multidisciplinario de ingenieros con más de una década combinada de experiencia en eficiencia energética, supervisión técnica e inspección industrial. Trabajamos directamente en campo para que usted tenga certeza técnica en cada etapa del proyecto.",
+    "titulo":       "Ingeniería orientada a resultados reales",
+    "desc":         "SigmaPro S.A.S. es una empresa de ingeniería orientada al desarrollo de soluciones técnicas para la industria, con un enfoque especial en sistemas térmicos, combustión, eficiencia energética y desarrollo de proyectos industriales.",
+    "desc2":        "Acompañamos a nuestros clientes en la evaluación, diseño, optimización y supervisión de proyectos industriales, ayudándolos a mejorar el desempeño de sus procesos, reducir costos energéticos y tomar decisiones técnicas basadas en análisis de ingeniería.",
     "stat1Num":     "+10",
     "stat1Lab":     "Años de experiencia",
     "stat2Num":     "+120",
@@ -32,8 +33,8 @@
     "val1Desc":     "Aplicamos metodologías normadas y verificables. Cada diagnóstico y cada informe tiene respaldo técnico documentado.",
     "val2Tit":      "Presencia en campo",
     "val2Desc":     "No supervisamos desde la oficina. Nuestros ingenieros están donde ocurren los procesos para detectar desviaciones en tiempo real.",
-    "val3Tit":      "Compromiso con resultados",
-    "val3Desc":     "Medimos nuestro éxito por el impacto en su operación: menos reprocesos, menor consumo y mayor cumplimiento normativo.",
+    "val3Tit":      "Equipo de alta formación",
+    "val3Desc":     "La mayoría de nuestros profesionales cuentan con maestría en ingeniería. El equipo incluye un doctor en ingeniería, lo que nos permite combinar experiencia industrial con capacidad avanzada de análisis técnico y modelamiento de procesos.",
     "cta":          "Conozca nuestro equipo"
   },
   "equipo": {
@@ -78,7 +79,7 @@
     "servicios": [
       "Consultoría de Ingeniería Especializada",
       "Interventoría Técnica",
-      "END e Inspección Técnica Avanzada",
+      "Auditoría Técnica Energética",
       "Otro"
     ]
   },

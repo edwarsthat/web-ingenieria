@@ -1,84 +1,104 @@
 ---
-title: "NDT & Advanced Technical Inspection"
-summary: "Non-destructive testing and advanced inspection services to verify structural and thermal integrity in industrial assets."
+title: "Technical Energy Audit"
+summary: "Technical energy efficiency diagnostics combining field inspection, measurements, and engineering analysis to identify real improvement opportunities and cost reduction."
 icon: "search"
 order: 3
 lang: "en"
 photo: "/images/ndt-advanced-technical-inspection.webp"
 ---
 
-## NDT & Advanced Technical Inspection
+## Technical Energy Audit
 
 ### Value Proposition
 
-Industrial assets subjected to pressure, temperature, cyclic loads, or corrosive environments develop internal discontinuities that are not visible during normal operation. Defective welds, fatigue cracks, wall loss from corrosion, or undetected thermal deformation, if not identified in time, can lead to catastrophic failure, unplanned shutdown, or regulatory non-compliance.
+SigmaPro's technical energy audit is designed to identify real opportunities for improvement in energy efficiency, operational performance, and energy cost reduction in industry.
 
-This service provides the technical evidence needed to determine the actual integrity state of an asset, using non-destructive testing and specialized inspection methods that do not interrupt operation and generate objective data for maintenance, replacement, or certification decisions.
+Unlike audits based solely on documentary information, our approach combines on-site technical inspection, energy measurements, equipment performance evaluation, and engineering analysis of systems. This allows us to produce solid technical diagnostics and concrete improvement proposals.
 
 ---
 
 ### Service Scope
 
-- Qualified visual inspection (VT) per API, ASME, or equivalent standards
-- Industrial ultrasound (UT): wall thickness measurement, internal discontinuity detection, phased array
-- Liquid penetrant (PT) and magnetic particle (MT) testing for surface and near-surface discontinuities
-- Active and passive infrared thermography for thermal integrity assessment and hot spot detection
-- Industrial radiography (RT) for welded joints and critical components
-- Acoustic emission for structural monitoring under load
-- Welded joint evaluation under ASME IX, AWS D1.1, and equivalent codes
-- Technical integrity reports with acceptance criteria and prioritized action recommendations
+#### Industrial Thermal Systems
+
+- Boilers
+- Industrial furnaces
+- Steam systems
+- Heat generation and recovery systems
+
+#### Industrial Refrigeration and Cold Storage
+
+- Industrial refrigeration systems
+- Cold rooms
+- HVAC systems
+- Energy performance evaluation of equipment
+
+#### Combustion Systems
+
+- Burner performance evaluation
+- Combustion efficiency analysis
+- Operating condition diagnosis
+- Identification of energy optimization opportunities
+
+#### Energy Recovery from Waste
+
+- Technical diagnosis for biogas projects
+- Assessment of the energy potential of organic waste
+- Identification of waste-to-energy opportunities
+
+Audits enable companies to identify operational improvements, reduce energy costs, and structure technological modernization projects.
 
 ---
 
 ### Key Benefits
 
-- Reduced unplanned shutdowns by detecting failure conditions before they occur
-- Technical risk mitigation with objective evidence of the actual asset condition
-- Energy optimization by identifying thermal losses in equipment and insulation through thermography
-- Protection of the client's margin by avoiding premature replacements without technical justification or incorrect repairs
-- Verifiable regulatory compliance with traceable inspection reports signed by personnel certified under ASNT or SNT-TC-1A standards
+- Identification of energy savings opportunities with direct impact on operating costs
+- Diagnostics backed by real measurements, not documentary assumptions
+- Prioritization of improvement investments based on their technical and economic return potential
+- Solid technical foundation for structuring modernization, efficiency, or energy recovery projects
+- Compliance with energy management requirements under standards such as ISO 50001
 
 ---
 
 ### Work Methodology
 
-1. **Inspection scope definition**: identification of assets, critical zones, discontinuities of interest, and applicable reference standards.
-2. **Method selection**: choice of the NDT technique or combination of techniques best suited to the material type, geometry, and operating condition.
-3. **Surface preparation and test conditions**: verification of pre-test requirements to ensure reliable results.
-4. **Test execution**: application of the selected technique by qualified personnel, with systematic recording of findings.
-5. **Results evaluation**: interpretation of indications against the acceptance criteria of the applicable standard.
-6. **Technical report**: formal document including methodology, results, supporting images, acceptance criteria, and prioritized action recommendations.
+1. **Prior information gathering**: review of consumption records, energy bills, process drawings, and equipment data sheets.
+2. **On-site technical visit**: direct inspection of the audited systems and equipment under real operating conditions.
+3. **In-situ energy measurements**: combustion analysis, temperature, flow, pressure, and electrical parameter measurements as applicable.
+4. **Engineering analysis**: data processing and system performance evaluation against reference or design values.
+5. **Opportunity identification and quantification**: determination of the improvement potential for each system with energy and economic savings estimates.
+6. **Audit technical report**: document including findings, system-by-system diagnosis, prioritized opportunities, and action recommendations with implementation timeline.
 
 ---
 
 ### Target Sectors
 
-- Energy generation (boilers, pressure vessels, steam piping, heat exchangers)
-- Metalworking industry (weld verification, structural components, fabricated equipment)
-- Infrastructure (storage tanks, metallic structures, industrial bridges)
-- Mining sector (process equipment, support structures, hydraulic and pneumatic systems)
-- High energy-consumption industries (furnaces, heat exchangers, steam and condensate systems)
+- High fuel-consumption industries (food processing, paper, ceramics, glass, mining)
+- Energy generation and industrial cogeneration
+- Agro-industrial and biomass processing sector
+- Companies with energy reporting or management obligations
+- Technological modernization projects with waste-to-energy potential
 
 ---
 
 ### Technical Differentiation
 
-This service operates as the **Verification** pillar within the **Design + Control + Verification** model.
+This service operates as the **Verification** pillar within the **Design + Control + Verification** model, applied to the energy performance of systems in operation.
 
-Advanced technical inspection is not a final procedural step — it is the objective validation that an asset was designed, fabricated, and assembled in accordance with established criteria, and that its current integrity condition is consistent with operational requirements. When the same organization participates in the design and supervision of an asset, inspection is more efficient because acceptance criteria are known from the project's origin.
+SigmaPro's energy audit is not a documentary exercise — it is a technical diagnostic that combines field presence, measurement capability, and engineering judgment. This makes it possible to identify opportunities that are not visible from reviewing bills or operational reports, and to translate them into technically grounded projects.
 
 ---
 
 ### Expected Results
 
-- Updated integrity map of critical assets
-- Maintenance or replacement decisions backed by technical evidence, not estimates
-- Reduced unplanned failure events with impact on production or safety
-- Inspection technical documentation available for regulatory or insurer audits
-- Technically justified service life extension for assets that still meet integrity criteria
+- Updated technical diagnostic of the energy status of audited systems
+- Quantified identification of savings opportunities with estimated economic impact
+- Prioritization of actions by implementation cost and return potential
+- Technical reference documentation for future improvement or expansion projects
+- Foundation for structuring energy efficiency, cogeneration, or waste-to-energy projects
 
 ---
 
 ### Call to Action
 
-If you need to verify the integrity state of a critical asset, validate a weld before commissioning, or establish a periodic inspection program, contact us to define the technical scope and the most appropriate testing methods for your specific case.
+If you want to understand the real energy state of your systems and identify which improvements can generate the greatest impact on your operating costs, contact us to define the audit scope and the most appropriate work plan for your operation.
