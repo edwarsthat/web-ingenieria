@@ -1,4 +1,4 @@
-D:\trabajo\tioAlonso\web-page\src\content\servicios\specialized-engineering-consulting.mdD:\trabajo\tioAlonso\web-page\src\content\servicios\specialized-engineering-consulting.md---
+---
 title: "Consultoría de Ingeniería Especializada"
 summary: "Apoyamos a la industria en el desarrollo, optimización y estructuración de proyectos técnicos, con enfoque especial en procesos térmicos y energéticos."
 icon: "engineering"
