@@ -330,19 +330,19 @@ const altLangHrefs = { en: '/en/contacto' };
       });
       const json = await res.json() as { ok?: boolean; error?: string };
 
-      result.classList.remove('hidden', 'bg-green-50', 'text-green-800', 'bg-red-50', 'text-red-800');
+      result.classList.remove('hidden');
 
       if (json.ok) {
-        result.classList.add('bg-green-50', 'text-green-800');
+        result.style.cssText = 'background:#f0fdf4;color:#166534;border:1px solid #bbf7d0';
         result.textContent = '¡Mensaje enviado! Le responderemos a la brevedad.';
         form.reset();
       } else {
-        result.classList.add('bg-red-50', 'text-red-800');
+        result.style.cssText = 'background:#fef2f2;color:#991b1b;border:1px solid #fecaca';
         result.textContent = json.error ?? 'Ocurrió un error. Intente de nuevo.';
       }
     } catch {
       result.classList.remove('hidden');
-      result.classList.add('bg-red-50', 'text-red-800');
+      result.style.cssText = 'background:#fef2f2;color:#991b1b;border:1px solid #fecaca';
       result.textContent = 'Error de conexión. Intente de nuevo.';
     } finally {
       btn.disabled = false;
