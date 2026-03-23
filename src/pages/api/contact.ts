@@ -56,8 +56,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     return res({ ok: true });
   } catch (err) {
+    const msg = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
     console.error(err);
-    return res({ error: 'Error interno del servidor.' }, 500);
+    return res({ error: msg }, 500);
   }
 };
 
