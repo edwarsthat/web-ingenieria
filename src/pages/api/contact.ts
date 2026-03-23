@@ -49,8 +49,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
 
     if (!mail.ok) {
-      console.error('Resend error:', await mail.text());
-      return res({ error: 'No se pudo enviar el mensaje. Intente de nuevo.' }, 500);
+      const errBody = await mail.text();
+      console.error('Resend error status:', mail.status, 'body:', errBody);
+      return res({ error: `Resend ${mail.status}: ${errBody}` }, 500);
     }
 
     return res({ ok: true });
