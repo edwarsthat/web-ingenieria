@@ -47,7 +47,7 @@ html:not(.no-js) [data-delay="4"] { transition-delay: 320ms; }
   --color-green-soft: #16A34A;  /* verde oscuro — hover de CTAs */
 
   /* ── Texto ────────────────────────────────────────────────── */
-  --color-text:       #0D1117;  /* casi negro con undertone azul — 18.6:1 sobre base */
+  --color-text:       #4f4f50;  /* casi negro con undertone azul — 18.6:1 sobre base */
 
   /* ── Tokens derivados ─────────────────────────────────────── */
   /* Superficie ligeramente tintada (secciones alternas) */
