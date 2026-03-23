@@ -15,57 +15,296 @@ const { titulo, desc, icono, color, href, label, slug } = Astro.props;
 const svgPath = serviceIcons[icono] ?? serviceIcons['audit'];
 ---
 
-<div
-  class="servicio-card group flex flex-col gap-5 p-8 rounded-2xl min-h-72
-         transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl"
+<article
+  class="servicio-card group"
   style={`--card-color: ${color};`}
+  tabindex="0"
+  role="group"
+  aria-label={titulo}
 >
 
-  <div class="card-icon w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
-    <svg
-      class="w-6 h-6 text-white"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      set:html={svgPath}
-    />
+  <!-- Fondo con overlay que aclara en hover -->
+  <div class="card-bg" aria-hidden="true"></div>
+
+  <!-- Línea de acento superior -->
+  <div class="card-accent" aria-hidden="true"></div>
+
+  <div class="card-inner">
+
+    <!-- Estado base: icono + título siempre visibles -->
+    <div class="card-top">
+
+      <div class="card-icon">
+        <svg
+          class="w-6 h-6 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          set:html={svgPath}
+        />
+      </div>
+
+      <h3 class="card-title">
+        {titulo}
+      </h3>
+
+      <!-- Indicador de hover -->
+      <div class="card-chevron" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- Estado hover/tap: descripción + CTA -->
+    <div class="card-reveal" aria-hidden="true" id={`reveal-${slug}`}>
+
+      <p class="card-desc">
+        {desc}
+      </p>
+
+      <a href={href} class="card-cta" tabindex="0">
+        {label}
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="flex flex-col flex-1 gap-3">
-    <h3 class="text-base font-bold text-white mt-0 mb-0">
-      {titulo}
-    </h3>
-    <p class="text-sm leading-relaxed text-white/70 mt-0 mb-0">
-      {desc}
-    </p>
-  </div>
+</article>
 
-  <div class="flex items-center justify-between mt-auto">
-    <div class="h-0.5 w-10 rounded-full bg-white/30"></div>
-    <a
-      href={href}
-      class="flex items-center gap-1.5 text-xs font-semibold text-white/70
-             hover:text-white no-underline transition-colors duration-200"
-    >
-      {label}
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-    </a>
-  </div>
+<script>
+  // En dispositivos touch (pointer: coarse), toggle .is-open al tap.
+  // En hover devices, el :hover CSS se encarga; aquí solo gestionamos aria-hidden.
+  const isTouchPrimary = window.matchMedia('(hover: none)').matches;
 
-</div>
+  document.querySelectorAll<HTMLElement>('.servicio-card').forEach((card) => {
+    const reveal = card.querySelector<HTMLElement>('.card-reveal');
+    if (!reveal) return;
+
+    if (isTouchPrimary) {
+      // En touch: el contenido está siempre visible — marcar como visible para AT
+      reveal.removeAttribute('aria-hidden');
+    } else {
+      // En hover devices: sincronizar aria-hidden con el estado visual
+      const showReveal = () => reveal.setAttribute('aria-hidden', 'false');
+      const hideReveal = () => reveal.setAttribute('aria-hidden', 'true');
+
+      card.addEventListener('mouseenter', showReveal);
+      card.addEventListener('mouseleave', hideReveal);
+      card.addEventListener('focusin', showReveal);
+      card.addEventListener('focusout', (e) => {
+        if (!card.contains((e as FocusEvent).relatedTarget as Node)) hideReveal();
+      });
+    }
+  });
+</script>
 
 <style>
+  /* ── Base ── */
   .servicio-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 20%, transparent);
+    transition: transform 240ms cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 240ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .servicio-card:hover,
+  .servicio-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px color-mix(in srgb, var(--color-primary) 35%, transparent),
+                0 2px 6px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  }
+
+  /* ── Fondo de color ── */
+  .card-bg {
+    position: absolute;
+    inset: 0;
     background-color: var(--card-color);
+    transition: background-color 240ms cubic-bezier(0.25, 1, 0.5, 1);
   }
-  .servicio-card:hover {
-    background-color: color-mix(in srgb, var(--card-color) 85%, white);
+  .servicio-card:hover .card-bg,
+  .servicio-card:focus-within .card-bg {
+    background-color: color-mix(in srgb, var(--card-color) 88%, white);
   }
+
+  /* ── Línea de acento superior ── */
+  .card-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(
+      to right,
+      rgba(255,255,255,0.15),
+      rgba(255,255,255,0.55),
+      rgba(255,255,255,0.15)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 240ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .servicio-card:hover .card-accent,
+  .servicio-card:focus-within .card-accent {
+    transform: scaleX(1);
+  }
+
+  /* ── Contenedor interno ── */
+  .card-inner {
+    position: relative;
+    z-index: 1;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ── Parte superior siempre visible ── */
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  /* ── Icono ── */
   .card-icon {
-    background-color: rgba(255, 255, 255, 0.15);
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    transition: background 240ms ease,
+                transform 240ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .servicio-card:hover .card-icon,
+  .servicio-card:focus-within .card-icon {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* ── Título ── */
+  .card-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+    letter-spacing: -0.01em;
+    transition: transform 240ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .servicio-card:hover .card-title,
+  .servicio-card:focus-within .card-title {
+    transform: translateY(-2px);
+  }
+
+  /* ── Chevron indicador ── */
+  .card-chevron {
+    color: rgba(255,255,255,0.4);
+    transition: transform 240ms cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 240ms ease;
+    width: fit-content;
+  }
+  .servicio-card:hover .card-chevron,
+  .servicio-card:focus-within .card-chevron {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+
+  /* ── Panel reveal ── */
+  .card-reveal {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 320ms cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 240ms ease;
+  }
+  .servicio-card:hover .card-reveal,
+  .servicio-card:focus-within .card-reveal {
+    max-height: 16rem;
+    opacity: 1;
+  }
+
+  /* ── Descripción ── */
+  .card-desc {
+    margin: 0.75rem 0 1rem;
+    font-size: 0.8125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* ── CTA — verde actúa ── */
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    background: var(--color-green);
+    width: fit-content;
+    transition: background 240ms ease,
+                gap 240ms cubic-bezier(0.25, 1, 0.5, 1),
+                transform 240ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .card-cta:hover,
+  .card-cta:focus-visible {
+    background: var(--color-green-soft);
+    gap: 0.6rem;
+    transform: translateY(-1px);
+  }
+
+  /* ── Touch / no-hover: siempre expandido ── */
+  @media (hover: none) {
+    .servicio-card {
+      transform: none !important;
+    }
+    .card-reveal {
+      max-height: 16rem;
+      opacity: 1;
+    }
+    .card-chevron {
+      display: none;
+    }
+    .card-bg {
+      background-color: color-mix(in srgb, var(--card-color) 88%, white);
+    }
+    .card-accent {
+      transform: scaleX(1);
+    }
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .servicio-card,
+    .card-bg,
+    .card-accent,
+    .card-icon,
+    .card-title,
+    .card-chevron,
+    .card-reveal,
+    .card-cta {
+      transition: none;
+      animation: none;
+    }
+    .servicio-card:hover .card-reveal,
+    .servicio-card:focus-within .card-reveal {
+      max-height: 16rem;
+      opacity: 1;
+    }
   }
 </style>

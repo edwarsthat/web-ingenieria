@@ -15,14 +15,16 @@ import Equipo        from "../../components/Equipo.astro";
 import Nosotros      from "../../components/Nosotros.astro";
 // prettier-ignore
 import Footer        from "../../components/Footer.astro";
+import { useTranslations } from "../../i18n/utils";
+const t = useTranslations("en");
 ---
 
-<Layout lang="en" title="Engineering">
+<Layout lang="en" title="Engineering" description={t.meta.homeDescription}>
   <Navbar slot="navbar" lang="en" />
   <Hero lang="en" />
-  <ComoTrabajamos lang="en" />
+  <!-- <ComoTrabajamos lang="en" /> -->
   <Servicios lang="en" />
-  <Nosotros lang="en" />
+  <!-- <Nosotros lang="en" /> -->
   <Equipo lang="en" />
   <Footer slot="footer" lang="en" />
 </Layout>

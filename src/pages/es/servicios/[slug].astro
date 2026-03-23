@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import Footer from '../../../components/Footer.astro';
@@ -9,13 +9,13 @@ import { serviceIcons } from '../../../utils/serviceIcons';
 export async function getStaticPaths() {
   const servicios = await getCollection('servicios', s => s.data.lang === 'es');
   return servicios.map(s => ({
-    params: { slug: s.slug },
+    params: { slug: s.id },
     props:  { servicio: s },
   }));
 }
 
 const { servicio } = Astro.props;
-const { Content } = await servicio.render();
+const { Content } = await render(servicio);
 const { title, summary, icon, photo } = servicio.data;
 const t = useTranslations('es');
 const svgPath = serviceIcons[icon] ?? serviceIcons['audit'];
@@ -23,7 +23,7 @@ const svgPath = serviceIcons[icon] ?? serviceIcons['audit'];
 const serviciosEn = await getCollection('servicios', s => s.data.lang === 'en');
 const equivalenteEn = serviciosEn.find(s => s.data.order === servicio.data.order);
 const altLangHrefs = equivalenteEn
-  ? { en: `/en/servicios/${equivalenteEn.slug}` }
+  ? { en: `/en/servicios/${equivalenteEn.id}` }
   : {};
 ---
 

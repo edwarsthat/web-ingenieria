@@ -18,9 +18,10 @@ const stats = [
 
 const valores = [
   {
-    titulo: t.nosotros.val1Tit,
-    desc:   t.nosotros.val1Desc,
-    /* Icono: cuaderno con check (rigor técnico) */
+    titulo:      t.nosotros.val1Tit,
+    desc:        t.nosotros.val1Desc,
+    /* Rigor técnico → azul primario: estructura, precisión */
+    accentColor: 'var(--color-primary)',
     svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
             d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
@@ -29,17 +30,19 @@ const valores = [
             d="M9 12l2 2 4-4"/>`,
   },
   {
-    titulo: t.nosotros.val2Tit,
-    desc:   t.nosotros.val2Desc,
-    /* Icono: pin de ubicación (presencia en campo) */
+    titulo:      t.nosotros.val2Tit,
+    desc:        t.nosotros.val2Desc,
+    /* Presencia en campo → cyan eléctrico: energía activa, dinamismo */
+    accentColor: 'var(--color-contrast)',
     svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
             d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
           <circle cx="12" cy="9" r="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" fill="none"/>`,
   },
   {
-    titulo: t.nosotros.val3Tit,
-    desc:   t.nosotros.val3Desc,
-    /* Icono: flecha tendencia ascendente (resultados) */
+    titulo:      t.nosotros.val3Tit,
+    desc:        t.nosotros.val3Desc,
+    /* Compromiso con resultados → verde: outcomes, éxito medible */
+    accentColor: 'var(--color-green)',
     svg: `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
           <polyline points="16 7 22 7 22 13" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>`,
   },
@@ -55,12 +58,13 @@ const valores = [
     <!-- ── Intro ── -->
     <div class="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
 
-      <span class="inline-flex items-center gap-1.5
-                   text-[0.72rem] font-bold tracking-[0.12em] uppercase
-                   text-(--color-contrast) border border-(--color-contrast)/30
-                   px-3.5 py-1.5 rounded-full">
-        {t.nosotros.badge}
-      </span>
+      <div class="flex items-center gap-3">
+        <span class="h-px w-8 bg-(--color-primary)/25"></span>
+        <span class="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-(--color-primary)/55">
+          {t.nosotros.badge}
+        </span>
+        <span class="h-px w-8 bg-(--color-primary)/25"></span>
+      </div>
 
       <h2 class="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold leading-[1.15]
                  mt-0 mb-0 text-(--color-text)">
@@ -75,9 +79,11 @@ const valores = [
 
     <!-- ── Estadísticas ── -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {stats.map(s => (
-        <div class="stat-card flex flex-col items-center text-center gap-1 py-7 px-4 rounded-2xl">
-          <span class="text-[2.2rem] font-extrabold leading-none text-(--color-primary)">
+      {stats.map((s, i) => (
+        <div class="stat-card flex flex-col items-center text-center gap-1 py-7 px-4 rounded-2xl"
+             data-reveal data-delay={String(i)}>
+          <span class="text-[2.2rem] font-extrabold leading-none text-(--color-primary)"
+                data-counter={s.num}>
             {s.num}
           </span>
           <span class="text-[0.82rem] font-medium text-(--color-text)/55 leading-snug">
@@ -89,14 +95,17 @@ const valores = [
 
     <!-- ── Valores / Pilares ── -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {valores.map(v => (
+      {valores.map((v, i) => (
         <div class="valor-card group flex flex-col gap-5 p-8 rounded-2xl
-                    transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                    transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+             data-reveal data-delay={String(i)}>
 
           <!-- Icono -->
-          <div class="valor-icon w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
+          <div class="valor-icon w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+               style={`background: color-mix(in srgb, ${v.accentColor} 12%, transparent)`}>
             <svg
-              class="w-6 h-6 text-(--color-primary)"
+              class="w-6 h-6"
+              style={`color: ${v.accentColor}`}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -116,7 +125,8 @@ const valores = [
           </div>
 
           <!-- Línea decorativa -->
-          <div class="h-0.5 w-10 rounded-full mt-auto accent-line"></div>
+          <div class="h-0.5 w-10 rounded-full mt-auto"
+               style={`background: ${v.accentColor}`}></div>
 
         </div>
       ))}
@@ -148,11 +158,42 @@ const valores = [
     border-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
   }
 
-  .valor-icon {
-    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  /* .valor-icon y .accent-line usan inline styles per-pilar */
+</style>
+
+<script>
+  function initCounters() {
+    const els = document.querySelectorAll<HTMLElement>('[data-counter]:not([data-counted])');
+    if (!els.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        el.dataset.counted = '1';
+        observer.unobserve(el);
+
+        const raw = el.dataset.counter!;
+        // Soporta: "+10", "+120", "25 %", etc.
+        const m = raw.match(/^([+]?)([\d]+)([\s%]*)$/);
+        if (!m) return;
+        const [, prefix, numStr, suffix] = m;
+        const target = parseInt(numStr);
+        const duration = 900;
+        const start = performance.now();
+
+        function tick(now: number) {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.round(eased * target) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+
+    els.forEach(el => observer.observe(el));
   }
 
-  .accent-line {
-    background: color-mix(in srgb, var(--color-primary) 40%, transparent);
-  }
-</style>
+  document.addEventListener('astro:page-load', initCounters);
+</script>

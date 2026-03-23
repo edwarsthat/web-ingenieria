@@ -9,7 +9,7 @@
   "servicios": {
     "badge":    "Lo que hacemos",
     "titulo":   "Nuestros servicios",
-    "desc":     "Somos un equipo de ingenieros especializados en eficiencia energética y optimización de procesos de combustión industrial. Con más de una década de experiencia, ayudamos a empresas a reducir su consumo energético y su huella de carbono sin sacrificar productividad.",
+    "desc":     "Para ofrecer soluciones integrales a nuestros clientes, SigmaPro estructura su actividad en tres pilares estratégicos de servicio que abarcan desde la evaluación técnica inicial hasta el acompañamiento en la ejecución de proyectos.",
     "verMas":   "Ver servicio",
     "volver":   "Volver a servicios",
     "ctaTitulo": "¿Este servicio aplica a su proyecto?",
@@ -89,8 +89,15 @@
     "rights":       "Todos los derechos reservados.",
     "location":     "Colombia"
   },
+  "meta": {
+    "homeDescription": "Ingeniería especializada en eficiencia energética, interventoría técnica e inspección industrial avanzada. Más de una década protegiendo proyectos industriales en Colombia.",
+    "contactDescription": "Contáctenos para una evaluación inicial sin costo. Respondemos en menos de 24 horas."
+  },
   "a11y": {
-    "skipToContent": "Ir al contenido principal"
+    "skipToContent": "Ir al contenido principal",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "selectLanguage": "Seleccionar idioma"
   },
   "hero": {
     "badge":    "Ingeniería · Control · Verificación",

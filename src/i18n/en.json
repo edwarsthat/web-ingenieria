@@ -9,7 +9,7 @@
   "servicios": {
     "badge":    "What we do",
     "titulo":   "Our services",
-    "desc":     "We are a team of engineers specialized in energy efficiency and industrial combustion process optimization. With over a decade of experience, we help companies reduce their energy consumption and carbon footprint without sacrificing productivity.",
+    "desc":     "To provide comprehensive solutions to our clients, SigmaPro structures its activity around three strategic service pillars, spanning from initial technical assessment to project execution support.",
     "verMas":   "View service",
     "volver":   "Back to services",
     "ctaTitulo": "Does this service apply to your project?",
@@ -89,8 +89,15 @@
     "rights":       "All rights reserved.",
     "location":     "Colombia"
   },
+  "meta": {
+    "homeDescription": "Specialized engineering in energy efficiency, technical supervision, and advanced industrial inspection. Over a decade protecting industrial projects in Colombia.",
+    "contactDescription": "Contact us for a free initial assessment. We respond within 24 hours."
+  },
   "a11y": {
-    "skipToContent": "Skip to main content"
+    "skipToContent": "Skip to main content",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "selectLanguage": "Select language"
   },
   "hero": {
     "badge":    "Engineering · Control · Verification",

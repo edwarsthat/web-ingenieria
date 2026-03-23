@@ -56,12 +56,9 @@ const steps = [
     <!-- ── Intro ── -->
     <div class="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
 
-      <span class="inline-flex items-center gap-1.5
-                   text-[0.72rem] font-bold tracking-[0.12em] uppercase
-                   text-(--color-contrast) border border-(--color-contrast)/30
-                   px-3.5 py-1.5 rounded-full">
+      <p class="text-[0.72rem] font-bold tracking-[0.14em] uppercase text-(--color-primary)/55 mt-0 mb-0">
         {t.comoTrabajamos.badge}
-      </span>
+      </p>
 
       <h2 class="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold leading-[1.15]
                  mt-0 mb-0 text-(--color-text)">
@@ -77,7 +74,7 @@ const steps = [
     <!-- ── Pasos ── -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
       {steps.map((step, i) => (
-        <div class="relative flex flex-col">
+        <div class="relative flex flex-col" data-reveal data-delay={String(i)}>
 
           <!-- Línea conectora horizontal (solo desktop, no en el último) -->
           {i < steps.length - 1 && (
@@ -150,6 +147,6 @@ const steps = [
   }
 
   .connector-line {
-    background: color-mix(in srgb, var(--color-primary) 25%, transparent);
+    background: color-mix(in srgb, var(--color-primary) 45%, transparent);
   }
 </style>

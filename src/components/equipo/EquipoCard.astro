@@ -11,69 +11,112 @@ interface Props {
 const { name, role, bio, initials, specialty, photo } = Astro.props;
 ---
 
-<div class="equipo-card flex flex-col gap-5 p-6 rounded-2xl transition-all duration-200 hover:-translate-y-1">
+<article
+  class="group relative overflow-hidden rounded-2xl
+         bg-(--color-base)
+         border border-[color-mix(in_srgb,var(--color-primary)_12%,transparent)]
+         transition-[border-color,box-shadow,transform,background-color] duration-240 ease-[cubic-bezier(0.25,1,0.5,1)]
+         hover:-translate-y-1
+         hover:bg-[color-mix(in_srgb,var(--color-primary)_1.5%,var(--color-base))]
+         hover:border-[color-mix(in_srgb,var(--color-primary)_30%,transparent)]
+         hover:shadow-[0_2px_8px_color-mix(in_srgb,var(--color-primary)_6%,transparent),0_12px_32px_color-mix(in_srgb,var(--color-primary)_12%,transparent)]
+         motion-reduce:transition-none"
+>
 
-  <!-- Avatar + nombre -->
-  <div class="flex items-center gap-4">
+  <!-- Left accent strip (blue → green), scales in on hover -->
+  <span
+    aria-hidden="true"
+    class="absolute inset-y-0 left-0 w-0.75 rounded-r-sm
+           bg-linear-to-b from-(--color-primary) to-(--color-green)
+           scale-y-0 origin-top group-hover:scale-y-100
+           transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]
+           motion-reduce:transition-none"
+  ></span>
 
-    <!-- Foto o iniciales -->
-    {photo ? (
-      <img
-        src={photo}
-        alt={name}
-        class="avatar-img w-14 h-14 rounded-full object-cover shrink-0"
-      />
-    ) : (
-      <div class="avatar-placeholder w-14 h-14 rounded-full flex items-center justify-center shrink-0
-                  text-lg font-extrabold text-white tracking-wide">
-        {initials}
+  <!-- Inner layout -->
+  <div class="flex flex-col gap-4 px-6 py-6">
+
+    <!-- Identity header -->
+    <header class="flex items-center gap-4">
+
+      <!-- Avatar: gradient ring border -->
+      <div
+        class="shrink-0 w-14 h-14 rounded-full p-[2.5px]
+               bg-linear-to-br from-(--color-primary) to-(--color-green)"
+      >
+        <div class="w-full h-full rounded-full overflow-hidden bg-(--color-base)">
+          {photo ? (
+            <img
+              src={photo}
+              alt={`Foto de ${name}`}
+              class="w-full h-full object-cover
+                     transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]
+                     group-hover:scale-110
+                     motion-reduce:transition-none"
+            />
+          ) : (
+            <div
+              aria-hidden="true"
+              class="w-full h-full flex items-center justify-center
+                     bg-linear-to-br from-(--color-primary)
+                     to-[color-mix(in_srgb,var(--color-primary)_60%,var(--color-green))]
+                     text-white text-[0.875rem] font-bold tracking-[0.05em] uppercase"
+            >
+              {initials}
+            </div>
+          )}
+        </div>
       </div>
-    )}
 
-    <div class="flex flex-col gap-0.5">
-      <h3 class="text-base font-bold text-(--color-text) mt-0 mb-0">
-        {name}
-      </h3>
-      <span class="text-sm font-medium text-(--color-primary)">
-        {role}
-      </span>
-    </div>
+      <!-- Name + role -->
+      <div class="min-w-0 flex-1">
+        <h3 class="m-0 text-[1rem] font-bold leading-[1.2]
+                   tracking-[-0.015em] truncate text-(--color-text)">
+          {name}
+        </h3>
+        <p class="flex items-center gap-1.5 mt-1.5 m-0
+                  text-[0.8125rem] font-medium leading-none text-(--color-primary)">
+          <span
+            aria-hidden="true"
+            class="shrink-0 w-1.5 h-1.5 rounded-full bg-(--color-green) animate-pulse motion-reduce:animate-none"
+          ></span>
+          {role}
+        </p>
+      </div>
+
+    </header>
+
+    <!-- Divider -->
+    <div
+      aria-hidden="true"
+      class="h-px bg-[color-mix(in_srgb,var(--color-text)_8%,transparent)]"
+    ></div>
+
+    <!-- Bio -->
+    <p class="m-0 text-[0.8125rem] leading-[1.75]
+              text-[color-mix(in_srgb,var(--color-text)_55%,transparent)]">
+      {bio}
+    </p>
+
+    <!-- Specialty tags -->
+    <footer aria-label="Especialidades" class="flex flex-wrap gap-1.5 mt-auto pt-0.5">
+      {specialty.map(tag => (
+        <span
+          class="inline-flex items-center cursor-default
+                 text-[0.6875rem] font-semibold tracking-[0.025em] uppercase
+                 px-2.5 py-1 rounded-full
+                 text-(--color-primary)
+                 bg-[color-mix(in_srgb,var(--color-primary)_8%,transparent)]
+                 border border-[color-mix(in_srgb,var(--color-primary)_16%,transparent)]
+                 transition-[background-color,border-color] duration-140 ease
+                 hover:bg-[color-mix(in_srgb,var(--color-primary)_14%,transparent)]
+                 hover:border-[color-mix(in_srgb,var(--color-primary)_30%,transparent)]
+                 motion-reduce:transition-none"
+        >
+          {tag}
+        </span>
+      ))}
+    </footer>
 
   </div>
-
-  <!-- Bio -->
-  <p class="text-sm leading-relaxed text-(--color-text)/60 mt-0 mb-0">
-    {bio}
-  </p>
-
-  <!-- Tags de especialidad -->
-  <div class="flex flex-wrap gap-2 mt-auto">
-    {specialty.map(tag => (
-      <span class="specialty-tag text-[0.7rem] font-semibold px-2.5 py-1 rounded-full">
-        {tag}
-      </span>
-    ))}
-  </div>
-
-</div>
-
-<style>
-  .equipo-card {
-    background: var(--color-base);
-    border: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
-  }
-  .equipo-card:hover {
-    border-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
-    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 8%, transparent);
-  }
-
-  .avatar-placeholder {
-    background: var(--color-primary);
-  }
-
-  .specialty-tag {
-    color: var(--color-primary);
-    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
-    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
-  }
-</style>
+</article>

@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 /* ============================================================
-   TEMAS DE COLOR — para cambiar de tema, comenta un bloque
-   y descomenta el otro.
+   TOKENS DE COLOR — sistema de diseño
+   Regla 60-30-10:
+     60% → --color-base (superficies, fondos)
+     30% → --color-primary (estructura, bordes, iconos)
+     10% → --color-green (CTAs y acciones únicamente)
    ============================================================ */
 
-/* ── TEMA 1: DARK INDUSTRIAL (activo) ── */
-:root {
-  --color-base:       #ffffff;
+/* ── Scroll reveal ─────────────────────────────────────────── */
+/* opacity: 0 sólo cuando JS está disponible (clase .no-js se elimina
+   con un inline script síncrono antes del primer paint).            */
+html:not(.no-js) [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 480ms cubic-bezier(0.25, 1, 0.5, 1),
+              transform 480ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+html:not(.no-js) [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+html:not(.no-js) [data-delay="1"] { transition-delay:  80ms; }
+html:not(.no-js) [data-delay="2"] { transition-delay: 160ms; }
+html:not(.no-js) [data-delay="3"] { transition-delay: 240ms; }
+html:not(.no-js) [data-delay="4"] { transition-delay: 320ms; }
 
-  --color-primary:    #2563EB;  /* azul principal — botones */
-  --color-contrast:   #38BDF8;  /* azul eléctrico — acentos */
-
-  --color-green:      #22C55E;  /* verde principal — éxito, energía */
-  --color-green-soft: #16A34A;  /* verde oscuro — hover */
-
-  --color-text:       #000000;
+@media (prefers-reduced-motion: reduce) {
+  html:not(.no-js) [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
-/* PALETA COMPLETA:
-   #2563EB  → azul principal    (--color-primary)
-   #38BDF8  → azul eléctrico    (--color-contrast)
-   #22C55E  → verde principal   (--color-green)
-   #86EFAC  → verde claro       (--color-green-soft)
-*/
+:root {
+  /* ── Superficies ─────────────────────────────────────────── */
+  --color-base:       #F7F9FF;  /* blanco frío — tinte azul imperceptible */
+
+  /* ── Cromática principal ──────────────────────────────────── */
+  --color-primary:    #2563EB;  /* azul — botones, bordes, acentos          5.9:1 sobre base */
+  --color-contrast:   #38BDF8;  /* cyan eléctrico — hero, iconos dark bg    9.8:1 sobre #080c10 */
+
+  /* ── Acción (solo CTAs) ───────────────────────────────────── */
+  --color-green:      #22C55E;  /* verde — botones primarios */
+  --color-green-soft: #16A34A;  /* verde oscuro — hover de CTAs */
+
+  /* ── Texto ────────────────────────────────────────────────── */
+  --color-text:       #0D1117;  /* casi negro con undertone azul — 18.6:1 sobre base */
+
+  /* ── Tokens derivados ─────────────────────────────────────── */
+  /* Superficie ligeramente tintada (secciones alternas) */
+  --color-surface:    color-mix(in srgb, var(--color-primary) 5%,  var(--color-base));
+  /* Superficie más tintada (stats, badges de fondo) */
+  --color-surface-2:  color-mix(in srgb, var(--color-primary) 8%,  var(--color-base));
+  /* Borde estándar */
+  --color-border:     color-mix(in srgb, var(--color-primary) 13%, transparent);
+  /* Borde en hover */
+  --color-border-hover: color-mix(in srgb, var(--color-primary) 30%, transparent);
+}

@@ -2,9 +2,10 @@
 interface Props {
   class?: string;
   size?: number;
+  variant?: "light" | "dark";
 }
 
-const { class: className = "", size = 40 } = Astro.props;
+const { class: className = "", size = 40, variant = "light" } = Astro.props;
 ---
 
 <img
@@ -12,6 +13,12 @@ const { class: className = "", size = 40 } = Astro.props;
   width={size}
   height={size}
   alt="Ingeniera"
-  class={className}
+  class:list={[className, { "logo-dark": variant === "dark" }]}
   loading="eager"
 />
+
+<style>
+  .logo-dark {
+    filter: brightness(0) invert(1);
+  }
+</style>

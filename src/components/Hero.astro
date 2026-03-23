@@ -39,7 +39,7 @@ const t = useTranslations(lang);
     <div class="text-white text-center md:text-left max-w-2xl">
 
       <!-- Badge -->
-      <span class="inline-flex items-center gap-1.5 mb-7
+      <span class="hero-badge inline-flex items-center gap-1.5 mb-7
                    text-[0.72rem] font-bold tracking-[0.12em] uppercase
                    text-(--color-green) border border-(--color-green)/30
                    px-3.5 py-1.5 rounded-full">
@@ -47,20 +47,20 @@ const t = useTranslations(lang);
       </span>
 
       <!-- Título -->
-      <h1 class="text-4xl md:text-[3rem] font-extrabold leading-[1.15]
+      <h1 class="hero-title text-4xl md:text-[3rem] font-extrabold leading-[1.15]
                  mt-0 mb-5 text-slate-50 ml-2">
         {t.hero.h1a}<br />
-        <span class="text-(--color-primary)">{t.hero.h1b}</span>
+        <span class="text-(--color-contrast)">{t.hero.h1b}</span>
       </h1>
 
       <!-- Subtítulo -->
-      <p class="text-[1.05rem] leading-[1.75] text-white/70
+      <p class="hero-subtitle text-[1.05rem] leading-[1.75] text-white/70
                 max-w-115 mt-0 mb-10 mx-auto md:mx-0">
         {t.hero.sub}
       </p>
 
       <!-- CTAs -->
-      <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+      <div class="hero-ctas flex gap-4 flex-wrap justify-center md:justify-start">
         <a
           href={`/${lang}/contacto`}
           class="bg-(--color-green) text-white
@@ -86,6 +86,21 @@ const t = useTranslations(lang);
 </section>
 
 <style>
+  /* ── Hero entrance choreography ── */
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+
+  .hero-badge    { animation: heroFadeUp 500ms cubic-bezier(0.25, 1, 0.5, 1)  80ms both; }
+  .hero-title    { animation: heroFadeUp 560ms cubic-bezier(0.25, 1, 0.5, 1) 220ms both; }
+  .hero-subtitle { animation: heroFadeUp 560ms cubic-bezier(0.25, 1, 0.5, 1) 380ms both; }
+  .hero-ctas     { animation: heroFadeUp 560ms cubic-bezier(0.25, 1, 0.5, 1) 500ms both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-badge, .hero-title, .hero-subtitle, .hero-ctas { animation: none; }
+  }
+
   .hero-section {
     background: #080c10;
   }

@@ -15,9 +15,8 @@ const servicios = (await getCollection('servicios'))
   .filter(s => s.data.lang === lang)
   .sort((a, b) => a.data.order - b.data.order);
 
-/* Los tres tonos de azul de los pilares:
-   1 → azul profundo   2 → azul principal   3 → azul cielo */
-const pillarColors = ['#1E3A8A', '#2563EB', '#0369A1'];
+/* oscuro → marino → verde acción */
+const pillarColors = ['#0F172A', '#1E3A8A', '#16A34A'];
 ---
 
 <section
@@ -31,7 +30,7 @@ const pillarColors = ['#1E3A8A', '#2563EB', '#0369A1'];
 
       <span class="inline-flex items-center gap-1.5
                    text-[0.72rem] font-bold tracking-[0.12em] uppercase
-                   text-(--color-contrast) border border-(--color-contrast)/30
+                   text-(--color-primary) border border-(--color-contrast)/40
                    px-3.5 py-1.5 rounded-full">
         {t.servicios.badge}
       </span>
@@ -50,15 +49,17 @@ const pillarColors = ['#1E3A8A', '#2563EB', '#0369A1'];
     <!-- ── Tarjetas: 3 columnas ── -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {servicios.map((s, i) => (
-        <ServicioCard
-          titulo={s.data.title}
-          desc={s.data.summary}
-          icono={s.data.icon}
-          color={pillarColors[i % 3]}
-          href={`/${lang}/servicios/${s.slug}`}
-          label={t.servicios.verMas}
-          slug={s.slug}
-        />
+        <div data-reveal data-delay={String(i)}>
+          <ServicioCard
+            titulo={s.data.title}
+            desc={s.data.summary}
+            icono={s.data.icon}
+            color={pillarColors[i % 3]}
+            href={`/${lang}/servicios/${s.id}`}
+            label={t.servicios.verMas}
+            slug={s.id}
+          />
+        </div>
       ))}
     </div>
 
