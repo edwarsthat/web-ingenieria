@@ -313,6 +313,7 @@ const altLangHrefs = { es: '/es/contacto' };
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    e.stopImmediatePropagation();
     if (!form || !result) return;
 
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
@@ -348,5 +349,5 @@ const altLangHrefs = { es: '/es/contacto' };
       btn.disabled = false;
       btn.innerHTML = original;
     }
-  });
+  }, true);
 </script>
