@@ -6,13 +6,15 @@ import Navbar        from "../../components/Navbar.astro";
 // prettier-ignore
 import Hero          from "../../components/Hero.astro";
 // prettier-ignore
-import ComoTrabajamos from "../../components/ComoTrabajamos.astro";
-// prettier-ignore
 import Servicios     from "../../components/Servicios.astro";
 // prettier-ignore
 import Equipo        from "../../components/Equipo.astro";
 // prettier-ignore
 import Nosotros      from "../../components/Nosotros.astro";
+// prettier-ignore
+import NuestroEnfoque from "../../components/NuestroEnfoque.astro";
+// prettier-ignore
+import SectoresValor  from "../../components/SectoresValor.astro";
 // prettier-ignore
 import Footer        from "../../components/Footer.astro";
 import { useTranslations } from "../../i18n/utils";
@@ -22,10 +24,10 @@ const t = useTranslations("es");
 <Layout lang="es" title="Ingeniería" description={t.meta.homeDescription}>
   <Navbar slot="navbar" lang="es" />
   <Hero lang="es" />
-  <!-- <ComoTrabajamos lang="es" /> -->
   <Nosotros lang="es" />
-
   <Servicios lang="es" />
+  <NuestroEnfoque lang="es" />
+  <SectoresValor lang="es" />
   <Equipo lang="es" />
   <Footer slot="footer" lang="es" />
 </Layout>

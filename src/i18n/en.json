@@ -42,6 +42,31 @@
     "titulo": "The team behind the work",
     "desc":   "Engineers with real field experience. Every project is handled directly by the professionals you will meet on-site."
   },
+  "sectoresValor": {
+    "badge":   "Application sectors",
+    "titulo":  "Sectors where we generate value",
+    "desc":    "Our services target industrial sectors with high energy demand.",
+    "s1":      "Food industry",
+    "s2":      "Agribusiness",
+    "s3":      "Chemical industry",
+    "s4":      "Materials industry",
+    "s5":      "Energy industry",
+    "s6":      "Agricultural sector",
+    "s7":      "Waste energy valorization"
+  },
+  "nuestroEnfoque": {
+    "badge":       "Our approach",
+    "titulo":      "Engineering that generates real value",
+    "desc":        "At SigmaPro we believe engineering must generate real value for industrial operations. That is why our work is grounded in four fundamental principles.",
+    "p1Titulo":    "Engineering with technical rigor",
+    "p1Desc":      "We apply engineering methodologies and advanced technical analysis in every project.",
+    "p2Titulo":    "Data-driven decisions",
+    "p2Desc":      "We use measurements, instrumentation, and energy analysis to support our recommendations.",
+    "p3Titulo":    "Energy optimization",
+    "p3Desc":      "We seek solutions that reduce energy consumption and improve process efficiency.",
+    "p4Titulo":    "Implementable solutions",
+    "p4Desc":      "We develop technically sound and viable proposals for industry."
+  },
   "comoTrabajamos": {
     "badge":      "Our process",
     "titulo":     "A clear process at every stage",
