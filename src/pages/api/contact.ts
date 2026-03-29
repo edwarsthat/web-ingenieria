@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json() as Record<string, string>;
     const { nombre, email, telefono, empresa, servicio, mensaje } = body;
@@ -15,10 +15,16 @@ export const POST: APIRoute = async ({ request, locals }) => {
       return res({ error: 'Email inválido.' }, 400);
     }
 
-    // Cloudflare Worker env (adapter) o variables de entorno locales
-    const env = (locals as any).runtime?.env ?? {};
-    const RESEND_API_KEY = env.RESEND_API_KEY ?? import.meta.env.RESEND_API_KEY;
-    const CONTACT_EMAIL  = env.CONTACT_EMAIL  ?? import.meta.env.CONTACT_EMAIL ?? 'proyectos@sigmaprosas.com';
+    // En Cloudflare Worker usa cloudflare:workers; en dev (Node.js) usa import.meta.env
+    let cfEnv: Record<string, string> = {};
+    try {
+      // @ts-ignore
+      const m = await import('cloudflare:workers');
+      cfEnv = m.env ?? {};
+    } catch { /* entorno local */ }
+
+    const RESEND_API_KEY = cfEnv.RESEND_API_KEY ?? import.meta.env.RESEND_API_KEY;
+    const CONTACT_EMAIL  = cfEnv.CONTACT_EMAIL  ?? import.meta.env.CONTACT_EMAIL ?? 'proyectos@sigmaprosas.com';
 
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY no configurada');
