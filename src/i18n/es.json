@@ -3,8 +3,17 @@
     "inicio":    "Inicio",
     "servicios": "Servicios",
     "nosotros":  "Nosotros",
+    "blogs": "Blogs",
     "proyectos": "Proyectos",
     "contacto":  "Contacto"
+  },
+  "blogs": {
+    "badge":  "Blogs",
+    "titulo": "Artículos técnicos de SigmaPro",
+    "vacio":  "Pronto publicaremos nuestros primeros artículos.",
+    "imagenPlaceholder": "Imagen del blog",
+    "volver": "Volver a blogs",
+    "porAutor": "Escrito por"
   },
   "servicios": {
     "badge":    "Lo que hacemos",
@@ -117,7 +126,8 @@
   },
   "meta": {
     "homeDescription": "Ingeniería especializada en eficiencia energética, interventoría técnica e inspección industrial avanzada. Más de una década protegiendo proyectos industriales en Colombia.",
-    "contactDescription": "Contáctenos para una evaluación inicial sin costo. Respondemos en menos de 24 horas."
+    "contactDescription": "Contáctenos para una evaluación inicial sin costo. Respondemos en menos de 24 horas.",
+    "blogsDescription": "Artículos técnicos de SigmaPro sobre sistemas térmicos, combustión, eficiencia energética y proyectos industriales."
   },
   "a11y": {
     "skipToContent": "Ir al contenido principal",

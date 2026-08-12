@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 const servicios = defineCollection({
@@ -27,4 +28,18 @@ const equipo = defineCollection({
   }),
 });
 
-export const collections = { servicios, equipo };
+const blogs = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blogs' }),
+  schema: z.object({
+    title:   z.string(),
+    summary: z.string(),
+    // id de una entrada de `equipo` — ej. "es-alejandro-vargas"
+    author:  reference('equipo'),
+    date:    z.coerce.date(),
+    lang:    z.enum(['es', 'en']),
+    photo:   z.string().optional(),
+    tags:    z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { servicios, equipo, blogs };

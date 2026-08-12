@@ -1,0 +1,231 @@
+---
+import { getEntry, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../Navbar.astro';
+import Footer from '../Footer.astro';
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  blog: CollectionEntry<'blogs'>;
+}
+
+const { lang, blog } = Astro.props;
+const { Content } = await render(blog);
+const { title, summary, date, photo, tags } = blog.data;
+const t = useTranslations(lang);
+
+const autor = await getEntry(blog.data.author);
+
+// timeZone UTC: la fecha del frontmatter no lleva hora y se parsea como
+// medianoche UTC — sin esto se muestra un día antes en zonas negativas.
+const fechaLarga = new Intl.DateTimeFormat(lang === 'en' ? 'en-US' : 'es-CO', {
+  day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
+}).format(date);
+const fechaISO = date.toISOString().slice(0, 10);
+---
+
+<Layout lang={lang} title={`${title} — SigmaPro`} description={summary} ogImage={photo}>
+  <Navbar slot="navbar" lang={lang} />
+
+  <!-- ── Encabezado ── -->
+  <section class="article-hero relative w-full overflow-hidden px-6 py-16 md:px-16 md:py-24">
+    {photo && (
+      <img src={photo} alt="" aria-hidden="true" loading="eager"
+           class="absolute inset-0 h-full w-full object-cover opacity-25" />
+    )}
+    <div class="hero-overlay absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto flex max-w-3xl flex-col gap-5">
+      <a href={`/${lang}/blogs`}
+         class="inline-flex w-fit items-center gap-1.5 text-sm text-white/50 no-underline transition-colors duration-200 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        {t.blogs.volver}
+      </a>
+
+      {tags.length > 0 && (
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span class="rounded-full border border-(--color-contrast)/30 px-3.5 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-(--color-contrast)">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <h1 class="mt-0 mb-0 text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-tight text-white">
+        {title}
+      </h1>
+      <p class="mt-0 mb-0 text-[1.05rem] leading-relaxed text-white/60">{summary}</p>
+
+      {autor && (
+        <div class="mt-2 flex items-center gap-3">
+          {autor.data.photo ? (
+            <img src={autor.data.photo} alt="" aria-hidden="true"
+                 class="h-11 w-11 shrink-0 rounded-full object-cover" />
+          ) : (
+            <span aria-hidden="true"
+                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold text-(--color-contrast)">
+              {autor.data.initials}
+            </span>
+          )}
+          <div class="flex flex-col">
+            <span class="text-sm font-semibold text-white">{autor.data.name}</span>
+            <span class="text-xs text-white/50">{autor.data.role}</span>
+          </div>
+          <time datetime={fechaISO} class="ml-auto font-mono text-xs text-white/40">{fechaLarga}</time>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- ── Cuerpo del artículo ── -->
+  <section class="content-section w-full px-6 py-14 md:px-16 md:py-20">
+    <article class="prose-content mx-auto max-w-3xl">
+      <Content />
+    </article>
+  </section>
+
+  <!-- ── Sobre el autor ── -->
+  {autor && (
+    <section class="content-section w-full px-6 pb-20 md:px-16">
+      <div class="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--color-primary)_12%,transparent)] bg-(--color-surface-alt) p-7 sm:flex-row sm:items-start">
+        {autor.data.photo ? (
+          <img src={autor.data.photo} alt={autor.data.name} loading="lazy"
+               class="h-16 w-16 shrink-0 rounded-full object-cover" />
+        ) : (
+          <span aria-hidden="true"
+                class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] text-sm font-bold text-(--color-primary)">
+            {autor.data.initials}
+          </span>
+        )}
+        <div class="flex flex-col gap-1.5">
+          <span class="font-mono text-[0.65rem] uppercase tracking-widest text-(--color-text-tertiary)">
+            {t.blogs.porAutor}
+          </span>
+          <span class="text-[1rem] font-bold text-(--color-text-primary)">{autor.data.name}</span>
+          <span class="text-xs font-semibold text-(--color-primary)">{autor.data.role}</span>
+          <p class="mt-1 mb-0 text-sm leading-relaxed text-(--color-text-secondary)">{autor.data.bio}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ── CTA ── -->
+  <section class="cta-section w-full px-6 py-14 md:px-16">
+    <div class="cta-card mx-auto flex max-w-300 flex-col items-center justify-between gap-6 rounded-2xl px-8 py-12 md:flex-row">
+      <div class="flex max-w-xl flex-col gap-2">
+        <h2 class="mt-0 mb-0 text-xl font-extrabold text-white">{t.servicios.ctaTitulo}</h2>
+        <p class="mt-0 mb-0 text-sm leading-relaxed text-white/65">{t.servicios.ctaDesc}</p>
+      </div>
+      <a href={`/${lang}/contacto`}
+         class="shrink-0 rounded-lg bg-white px-7 py-3 text-sm font-semibold text-(--color-primary) no-underline transition-all duration-200 hover:-translate-y-px hover:opacity-90">
+        {t.servicios.ctaBoton}
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" lang={lang} />
+</Layout>
+
+<style>
+  .article-hero {
+    background: var(--color-inverse);
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(to bottom, rgba(8,12,16,0.75) 0%, rgba(8,12,16,0.85) 100%),
+      linear-gradient(to right, rgba(8,12,16,0.5) 0%, transparent 70%);
+  }
+
+  .content-section {
+    background: var(--color-base);
+  }
+
+  /* ── Estilos para el markdown renderizado ── */
+  .prose-content :global(h2) {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .prose-content :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .prose-content :global(h3) {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-content :global(p) {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: color-mix(in srgb, var(--color-text) 75%, transparent);
+    margin-top: 0;
+    margin-bottom: 1.15rem;
+  }
+
+  .prose-content :global(ul),
+  .prose-content :global(ol) {
+    padding-left: 1.25rem;
+    margin-bottom: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .prose-content :global(li) {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: color-mix(in srgb, var(--color-text) 75%, transparent);
+  }
+
+  .prose-content :global(strong) {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  /* Los diagramas de flujo del artículo van como blockquote */
+  .prose-content :global(blockquote) {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 5%, transparent);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .prose-content :global(blockquote p) {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .prose-content :global(hr) {
+    border: none;
+    border-top: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
+    margin: 2rem 0;
+  }
+
+  .cta-section {
+    background: color-mix(in srgb, var(--color-primary) 6%, var(--color-base));
+  }
+
+  .cta-card {
+    background: var(--color-primary);
+  }
+</style>

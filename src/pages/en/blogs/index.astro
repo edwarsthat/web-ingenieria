@@ -1,0 +1,18 @@
+---
+import Layout   from '../../../layouts/Layout.astro';
+import Navbar   from '../../../components/Navbar.astro';
+import Footer   from '../../../components/Footer.astro';
+import BlogList from '../../../components/blogs/BlogList.astro';
+import { getPosts } from '../../../utils/blogs';
+import { useTranslations } from '../../../i18n/utils';
+
+const t = useTranslations('en');
+const altLangHrefs = { es: '/es/blogs' };
+const posts = await getPosts('en');
+---
+
+<Layout lang="en" title="Blog — SigmaPro" description={t.meta.blogsDescription}>
+  <Navbar slot="navbar" lang="en" altLangHrefs={altLangHrefs} />
+  <BlogList lang="en" posts={posts} />
+  <Footer slot="footer" lang="en" />
+</Layout>

@@ -1,0 +1,61 @@
+---
+import BlogCard from './BlogCard.astro';
+import type { Author } from './BlogCard.astro';
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../i18n/utils';
+
+export interface Post {
+  slug: string;
+  title: string;
+  summary: string;
+  author: Author;
+  date: Date;
+  image?: string;
+  tags?: string[];
+}
+
+export interface Props {
+  lang: Lang;
+  posts?: Post[];
+}
+const { lang, posts = [] } = Astro.props;
+const t = useTranslations(lang);
+
+// timeZone UTC: la fecha del frontmatter es una fecha sin hora y se parsea
+// como medianoche UTC — sin esto se muestra un día antes en zonas negativas.
+const fmt = new Intl.DateTimeFormat(lang === 'en' ? 'en-US' : 'es-CO', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+---
+<section class="mx-auto max-w-[1180px] px-6 pb-20 md:px-12">
+  <div class="mx-auto max-w-[900px] pt-18 pb-10 text-center">
+    <div class="mb-3 font-mono text-xs uppercase tracking-widest text-blue-600">{t.blogs.badge}</div>
+    <h2 class="font-extrabold text-4xl text-slate-900">{t.blogs.titulo}</h2>
+  </div>
+
+  {posts.length === 0 ? (
+    <p class="rounded-xl border border-slate-200 bg-slate-50 px-6 py-12 text-center text-sm text-slate-600">
+      {t.blogs.vacio}
+    </p>
+  ) : (
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <a href={`/${lang}/blogs/${post.slug}`} class="block h-full no-underline">
+          <BlogCard
+            title={post.title}
+            summary={post.summary}
+            author={post.author}
+            date={fmt.format(post.date)}
+            dateISO={post.date.toISOString().slice(0, 10)}
+            image={post.image}
+            tags={post.tags}
+            imagePlaceholder={t.blogs.imagenPlaceholder}
+          />
+        </a>
+      ))}
+    </div>
+  )}
+</section>

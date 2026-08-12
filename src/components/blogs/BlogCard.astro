@@ -1,0 +1,46 @@
+---
+export interface Author {
+  name: string;
+  role?: string;
+  initials: string;
+  photo?: string;
+}
+
+export interface Props {
+  title: string;
+  summary: string;
+  author: Author;
+  /** Fecha ya formateada según el idioma de la página */
+  date: string;
+  /** Valor ISO para el atributo datetime */
+  dateISO?: string;
+  image?: string;
+  tags?: string[];
+  /** Texto del placeholder cuando el post no tiene imagen */
+  imagePlaceholder?: string;
+}
+const { title, summary, author, date, dateISO, image, tags = [], imagePlaceholder = '' } = Astro.props;
+const tag = tags[0];
+---
+<article class="group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md cursor-pointer">
+  <div class="aspect-video flex items-center justify-center overflow-hidden bg-[repeating-linear-gradient(135deg,var(--color-slate-100)_0px,var(--color-slate-100)_10px,var(--color-slate-50)_10px,var(--color-slate-50)_20px)]">
+    {image ? (
+      <img src={image} alt="" aria-hidden="true" loading="lazy" class="h-full w-full object-cover" />
+    ) : (
+      <span class="font-mono text-[11px] uppercase tracking-widest text-slate-400">{imagePlaceholder}</span>
+    )}
+  </div>
+
+  <div class="flex flex-1 flex-col gap-2.5 p-5">
+    {tag && (
+      <span class="font-mono text-[11px] uppercase tracking-widest text-blue-600">{tag}</span>
+    )}
+    <h3 class="font-extrabold text-lg leading-tight text-slate-900">{title}</h3>
+    <p class="flex-1 text-sm leading-relaxed text-slate-600">{summary}</p>
+    <div class="mt-1 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3 font-mono text-xs text-slate-400">
+      <span>{author.name}</span>
+      <span aria-hidden="true">·</span>
+      <time datetime={dateISO}>{date}</time>
+    </div>
+  </div>
+</article>

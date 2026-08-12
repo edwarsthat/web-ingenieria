@@ -69,6 +69,13 @@ const t = useTranslations(lang);
       </li>
       <li>
         <a
+          href={`/${lang}/blogs`}
+          class="text-(--color-text)/60 hover:text-(--color-text) text-sm font-medium no-underline transition-colors duration-200"
+          >{t.nav.blogs}</a
+        >
+      </li>
+      <li>
+        <a
           href={`/${lang}/contacto`}
           class="bg-(--color-green) text-(--color-base) hover:bg-(--color-green-soft) hover:text-(--color-text) text-sm font-semibold px-4 py-2 rounded-md no-underline transition-colors duration-200"
         >
@@ -178,6 +185,13 @@ const t = useTranslations(lang);
           href={`/${lang}/#nosotros`}
           class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200"
           >{t.nav.nosotros}</a
+        >
+      </li>
+      <li>
+        <a
+          href={`/${lang}/blogs`}
+          class="block px-6 py-3 text-(--color-text)/60 hover:text-(--color-text) text-base font-medium no-underline transition-colors duration-200"
+          >{t.nav.blogs}</a
         >
       </li>
       <li class="px-6 py-3">

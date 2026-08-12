@@ -3,8 +3,17 @@
     "inicio":    "Home",
     "servicios": "Services",
     "nosotros":  "About",
+    "blogs": "Blog",
     "proyectos": "Projects",
     "contacto":  "Contact"
+  },
+  "blogs": {
+    "badge":  "Blog",
+    "titulo": "SigmaPro technical articles",
+    "vacio":  "We will publish our first articles soon.",
+    "imagenPlaceholder": "Post image",
+    "volver": "Back to blog",
+    "porAutor": "Written by"
   },
   "servicios": {
     "badge":    "What we do",
@@ -117,7 +126,8 @@
   },
   "meta": {
     "homeDescription": "Specialized engineering in energy efficiency, technical supervision, and advanced industrial inspection. Over a decade protecting industrial projects in Colombia.",
-    "contactDescription": "Contact us for a free initial assessment. We respond within 24 hours."
+    "contactDescription": "Contact us for a free initial assessment. We respond within 24 hours.",
+    "blogsDescription": "SigmaPro technical articles on thermal systems, combustion, energy efficiency, and industrial projects."
   },
   "a11y": {
     "skipToContent": "Skip to main content",

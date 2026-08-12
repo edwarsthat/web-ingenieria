@@ -1,12 +1,115 @@
 @import "tailwindcss";
 
 /* ============================================================
-   TOKENS DE COLOR — sistema de diseño
+   PALETA SIGMAPRO — fuente única de verdad
+   Definida en @theme → Tailwind genera utilidades automáticamente
+   (bg-primary, text-text-secondary, border-border-subtle, …)
+   y expone cada token como var(--color-*) en :root.
+
    Regla 60-30-10:
-     60% → --color-base (superficies, fondos)
-     30% → --color-primary (estructura, bordes, iconos)
-     10% → --color-green (CTAs y acciones únicamente)
+     60% → superficies (--color-surface / --color-page)
+     30% → azul en estructura (--color-primary y escala blue)
+     10% → verde solo en CTAs (--color-accent)
    ============================================================ */
+
+@theme static {
+  /* ── Escala azul ──────────────────────────────────────────── */
+  --color-blue-50:  #eff4ff;
+  --color-blue-100: #dbe6fe;
+  --color-blue-200: #bfd3fe;
+  --color-blue-300: #93b4fd;
+  --color-blue-400: #5c8cfa;
+  --color-blue-500: #2563eb;
+  --color-blue-600: #1d4fc7;
+  --color-blue-700: #1a3fa0;
+  --color-blue-800: #1b3480;
+  --color-blue-900: #182b66;
+  --color-blue-950: #0f1b42;
+
+  /* ── Escala verde ─────────────────────────────────────────── */
+  --color-green-50:  #eefbf3;
+  --color-green-100: #d7f5e3;
+  --color-green-200: #b2eacb;
+  --color-green-300: #7fdba9;
+  --color-green-400: #48d17c;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #0f7c38;
+  --color-green-800: #0e622f;
+  --color-green-900: #0c4e27;
+
+  /* ── Escala neutra ────────────────────────────────────────── */
+  --color-slate-25:  #f8f9fa;
+  --color-slate-50:  #f3f4f6;
+  --color-slate-100: #e7e9ec;
+  --color-slate-200: #d3d6db;
+  --color-slate-300: #b2b2b2;
+  --color-slate-400: #9498a0;
+  --color-slate-500: #767b85;
+  --color-slate-600: #5b606b;
+  --color-slate-700: #454952;
+  --color-slate-800: #2e3138;
+  --color-slate-900: #1c1e22;
+  --color-slate-950: #101114;
+
+  /* ── Estado ───────────────────────────────────────────────── */
+  --color-red-500:   #dc2626;
+  --color-red-600:   #b91c1c;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+
+  /* ── Marca ────────────────────────────────────────────────── */
+  --color-primary:        var(--color-blue-500);
+  --color-primary-hover:  var(--color-blue-600);
+  --color-primary-active: var(--color-blue-700);
+  --color-primary-subtle: var(--color-blue-50);
+
+  --color-accent:         var(--color-green-500);
+  --color-accent-hover:   var(--color-green-600);
+  --color-accent-subtle:  var(--color-green-50);
+
+  /* ── Semánticos de estado ─────────────────────────────────── */
+  --color-danger:        var(--color-red-500);
+  --color-danger-hover:  var(--color-red-600);
+  --color-warning:       var(--color-amber-500);
+  --color-success:       var(--color-green-600);
+  --color-info:          var(--color-blue-500);
+
+  /* ── Superficies ──────────────────────────────────────────── */
+  --color-page:          var(--color-slate-25);   /* fondo de página / secciones alternas */
+  --color-surface:       #ffffff;                 /* tarjetas y paneles */
+  --color-surface-alt:   var(--color-slate-50);   /* pills, chips, fondos sutiles */
+  --color-inverse:       var(--color-slate-950);  /* hero, footer, bloques oscuros */
+  --color-inverse-alt:   var(--color-blue-950);   /* variante marino sobre oscuro */
+
+  /* ── Bordes ───────────────────────────────────────────────── */
+  --color-border-subtle:  var(--color-slate-100);
+  --color-border-default: var(--color-slate-200);
+  --color-border-strong:  var(--color-slate-400);
+
+  /* ── Texto ────────────────────────────────────────────────── */
+  --color-text-primary:    var(--color-slate-900);
+  --color-text-secondary:  var(--color-slate-600);
+  --color-text-tertiary:   var(--color-slate-400);
+  --color-text-on-primary: #ffffff;
+  --color-text-on-inverse: var(--color-slate-50);
+  --color-text-link:       var(--color-blue-600);
+  --color-text-link-hover: var(--color-blue-700);
+
+  /* ══════════════════════════════════════════════════════════
+     ALIAS HEREDADOS — nombres usados por los componentes.
+     Se mantienen para no reescribir ~380 referencias; ahora
+     apuntan a la paleta de arriba.
+     ══════════════════════════════════════════════════════════ */
+  --color-base:         var(--color-surface);        /* fondo de tarjetas/superficies */
+  --color-text:         var(--color-text-primary);
+  --color-contrast:     var(--color-blue-400);       /* acento sobre fondo oscuro */
+  --color-green:        var(--color-accent);
+  --color-green-soft:   var(--color-accent-hover);
+  --color-surface-2:    var(--color-surface-alt);
+  --color-border:       var(--color-border-default);
+  --color-border-hover: color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
 
 /* ── Scroll reveal ─────────────────────────────────────────── */
 /* opacity: 0 sólo cuando JS está disponible (clase .no-js se elimina
@@ -32,30 +135,4 @@ html:not(.no-js) [data-delay="4"] { transition-delay: 320ms; }
     transform: none !important;
     transition: none !important;
   }
-}
-
-:root {
-  /* ── Superficies ─────────────────────────────────────────── */
-  --color-base:       #F7F9FF;  /* blanco frío — tinte azul imperceptible */
-
-  /* ── Cromática principal ──────────────────────────────────── */
-  --color-primary:    #2563EB;  /* azul — botones, bordes, acentos          5.9:1 sobre base */
-  --color-contrast:   #38BDF8;  /* cyan eléctrico — hero, iconos dark bg    9.8:1 sobre #080c10 */
-
-  /* ── Acción (solo CTAs) ───────────────────────────────────── */
-  --color-green:      #22C55E;  /* verde — botones primarios */
-  --color-green-soft: #16A34A;  /* verde oscuro — hover de CTAs */
-
-  /* ── Texto ────────────────────────────────────────────────── */
-  --color-text:       #4f4f50;  /* casi negro con undertone azul — 18.6:1 sobre base */
-
-  /* ── Tokens derivados ─────────────────────────────────────── */
-  /* Superficie ligeramente tintada (secciones alternas) */
-  --color-surface:    color-mix(in srgb, var(--color-primary) 5%,  var(--color-base));
-  /* Superficie más tintada (stats, badges de fondo) */
-  --color-surface-2:  color-mix(in srgb, var(--color-primary) 8%,  var(--color-base));
-  /* Borde estándar */
-  --color-border:     color-mix(in srgb, var(--color-primary) 13%, transparent);
-  /* Borde en hover */
-  --color-border-hover: color-mix(in srgb, var(--color-primary) 30%, transparent);
 }

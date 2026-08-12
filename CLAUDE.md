@@ -23,22 +23,33 @@ Guía de contexto persistente para sesiones de desarrollo y diseño.
 
 ## Paleta de Colores
 
-Definida en `src/styles/global.css`:
+Paleta SigmaPro, definida en `@theme static` dentro de `src/styles/global.css`.
+Cada token existe como `var(--color-*)` global **y** como utilidad Tailwind (`bg-primary`, `text-text-secondary`, `border-border-subtle`…). **No usar hex sueltos en componentes.**
 
+**Escalas** — `blue-50…950`, `green-50…900`, `slate-25…950`, `red-500/600`, `amber-500/600`
+(sobrescriben la escala por defecto de Tailwind: `bg-blue-500` = `#2563eb` de marca).
+
+**Tokens semánticos:**
 ```
---color-base:       #ffffff   → fondo principal, superficies de tarjetas
---color-primary:    #2563EB   → azul — botones, bordes, acentos principales
---color-contrast:   #38BDF8   → azul eléctrico — badges, iconos secundarios
---color-green:      #22C55E   → verde — CTAs primarios, energía, positivo
---color-green-soft: #16A34A   → verde oscuro — hover de CTAs
---color-text:       #000000   → texto principal
+--color-primary / -hover / -active / -subtle   blue-500 / 600 / 700 / 50
+--color-accent  / -hover / -subtle             green-500 / 600 / 50   ← solo CTAs
+--color-danger / -hover, --color-warning, --color-success, --color-info
+
+--color-page          slate-25   → fondo de página / secciones alternas
+--color-surface       #ffffff    → tarjetas y paneles
+--color-surface-alt   slate-50   → pills, chips, fondos sutiles
+--color-inverse       slate-950  → hero, footer, bloques oscuros
+--color-inverse-alt   blue-950   → variante marino sobre oscuro
+
+--color-border-subtle / -default / -strong     slate-100 / 200 / 400
+--color-text-primary / -secondary / -tertiary  slate-900 / 600 / 400
+--color-text-on-primary / -on-inverse / -link / -link-hover
 ```
 
-**Colores directos en componentes:**
-- `#080c10` — fondo hero y footer (casi negro)
-- `#1E3A8A`, `#0369A1` — variantes de azul en tarjetas de servicios
+**Alias heredados** (siguen vivos, apuntan a la paleta — no crear nuevos):
+`--color-base`→surface · `--color-text`→text-primary · `--color-contrast`→blue-400 (acento sobre oscuro) · `--color-green`→accent · `--color-green-soft`→accent-hover · `--color-surface-2`→surface-alt · `--color-border`→border-default
 
-**Regla 60-30-10:** Fondo blanco (60%) · Azul en estructura/bordes (30%) · Verde solo en CTAs y acentos clave (10%)
+**Regla 60-30-10:** Superficies claras (60%) · Azul en estructura/bordes (30%) · Verde solo en CTAs y acentos clave (10%)
 
 ---
 

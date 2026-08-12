@@ -16,7 +16,7 @@ const servicios = (await getCollection('servicios'))
   .sort((a, b) => a.data.order - b.data.order);
 
 /* oscuro → marino → verde acción */
-const pillarColors = ['#0F172A', '#1E3A8A', '#16A34A'];
+const pillarColors = ['var(--color-slate-950)', 'var(--color-blue-800)', 'var(--color-green-600)'];
 ---
 
 <section
