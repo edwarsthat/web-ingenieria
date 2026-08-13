@@ -180,8 +180,8 @@
       {
         "id":    "auditoria",
         "badge": "Auditoría técnica energética",
-        "h1a":   "25 % menos",
-        "h1b":   "en consumo energético.",
+        "h1a":   "Dónde se pierde",
+        "h1b":   "la energía de su planta.",
         "sub":   "Diagnósticos que combinan inspección en campo, mediciones y análisis de ingeniería para identificar oportunidades reales de reducción de costos.",
         "cta1":  { "label": "Ver el servicio",      "href": "/servicios/end-e-inspeccion-tecnica-avanzada" },
         "cta2":  { "label": "Solicitar evaluación", "href": "/contacto" }

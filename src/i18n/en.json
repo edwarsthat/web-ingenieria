@@ -171,8 +171,8 @@
       {
         "id":    "auditoria",
         "badge": "Technical energy audit",
-        "h1a":   "25% less",
-        "h1b":   "energy consumption.",
+        "h1a":   "Where your plant",
+        "h1b":   "is losing energy.",
         "sub":   "Diagnostics combining field inspection, measurements, and engineering analysis to identify real cost-reduction opportunities.",
         "cta1":  { "label": "View the service",   "href": "/servicios/ndt-advanced-technical-inspection" },
         "cta2":  { "label": "Request assessment", "href": "/contacto" }
