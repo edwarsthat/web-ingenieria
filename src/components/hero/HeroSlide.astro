@@ -1,0 +1,151 @@
+---
+import { getHeroImage, type HeroSlide } from '../../data/heroSlides';
+import type { Lang } from '../../i18n/utils';
+
+interface Props {
+  slide: HeroSlide;
+  lang: Lang;
+  index: number;
+  total: number;
+}
+
+const { slide, lang, index, total } = Astro.props;
+
+const image   = getHeroImage(slide.id);
+const isFirst = index === 0;
+
+// Un solo <h1> por página: el resto de slides usan <h2> con el mismo estilo.
+const Heading = isFirst ? 'h1' : 'h2';
+---
+
+<article
+  class="hero-slide col-start-1 row-start-1 relative flex items-center
+         px-6 pt-2 pb-24 md:px-16 md:pt-12 md:pb-28"
+  data-hero-slide
+  data-index={index}
+  role="group"
+  aria-roledescription="slide"
+  aria-label={`${index + 1} / ${total}`}
+  data-active={isFirst ? '' : undefined}
+  aria-hidden={isFirst ? undefined : 'true'}
+  {...(isFirst ? {} : { inert: true })}
+>
+  <!-- Imagen de fondo -->
+  <img
+    src={image.src}
+    width={image.width}
+    height={image.height}
+    alt=""
+    aria-hidden="true"
+    fetchpriority={isFirst ? 'high' : undefined}
+    loading="eager"
+    decoding="async"
+    class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center"
+  />
+
+  <!-- Vignette oscura en los bordes -->
+  <div class="hero-vignette absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+  <!-- Contenedor principal -->
+  <div class="relative z-10 max-w-300 mx-auto w-full">
+
+    <!-- ── Texto ── -->
+    <div class="text-white text-center md:text-left max-w-2xl">
+
+      <!-- Badge -->
+      <span class="hero-badge inline-flex items-center gap-1.5 mb-7
+                   text-[0.72rem] font-bold tracking-[0.12em] uppercase
+                   text-(--color-green) border border-(--color-green)/30
+                   px-3.5 py-1.5 rounded-full">
+        {slide.badge}
+      </span>
+
+      <!-- Título -->
+      <Heading class="hero-title text-4xl md:text-[3rem] font-extrabold leading-[1.15]
+                      mt-0 mb-5 text-slate-50 ml-2">
+        {slide.h1a}<br />
+        <span class="text-(--color-contrast)">{slide.h1b}</span>
+      </Heading>
+
+      <!-- Subtítulo -->
+      <p class="hero-subtitle text-[1.05rem] leading-[1.75] text-white/70
+                max-w-115 mt-0 mb-10 mx-auto md:mx-0">
+        {slide.sub}
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-ctas flex gap-4 flex-wrap justify-center md:justify-start">
+        <a
+          href={`/${lang}${slide.cta1.href}`}
+          class="bg-(--color-green) text-white
+                 px-7 py-3 rounded-lg font-semibold text-[0.95rem]
+                 no-underline transition-all duration-200
+                 hover:bg-(--color-green-soft) hover:text-(--color-text) hover:-translate-y-px"
+        >
+          {slide.cta1.label}
+        </a>
+        <a
+          href={`/${lang}${slide.cta2.href}`}
+          class="text-white/65 border border-white/20
+                 px-7 py-3 rounded-lg font-semibold text-[0.95rem]
+                 no-underline transition-all duration-200
+                 hover:text-white hover:border-white/40 hover:-translate-y-px"
+        >
+          {slide.cta2.label}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<style>
+  /* ── Crossfade entre slides ── */
+  .hero-slide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 600ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .hero-slide[data-active] {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+  }
+
+  .hero-bg-img {
+    opacity: 0.55;
+  }
+
+  /* Vignette: bordes difuminados a negro */
+  .hero-vignette {
+    background:
+      /* Izquierda: oscuro para legibilidad del texto */
+      linear-gradient(to right,  rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.10) 70%, transparent 100%),
+      /* Arriba */
+      linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, transparent 30%),
+      /* Abajo */
+      linear-gradient(to top,    rgba(0,0,0,0.70) 0%, transparent 35%),
+      /* Derecha */
+      linear-gradient(to left,   rgba(0,0,0,0.50) 0%, transparent 30%);
+  }
+
+  /* ── Coreografía de entrada: se reproduce cada vez que el slide se activa ── */
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+
+  .hero-slide[data-active] .hero-badge    { animation: heroFadeUp 500ms cubic-bezier(0.25, 1, 0.5, 1)  80ms both; }
+  .hero-slide[data-active] .hero-title    { animation: heroFadeUp 560ms cubic-bezier(0.25, 1, 0.5, 1) 220ms both; }
+  .hero-slide[data-active] .hero-subtitle { animation: heroFadeUp 560ms cubic-bezier(0.25, 1, 0.5, 1) 380ms both; }
+  .hero-slide[data-active] .hero-ctas     { animation: heroFadeUp 560ms cubic-bezier(0.25, 1, 0.5, 1) 500ms both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide { transition: none; }
+    .hero-slide[data-active] .hero-badge,
+    .hero-slide[data-active] .hero-title,
+    .hero-slide[data-active] .hero-subtitle,
+    .hero-slide[data-active] .hero-ctas { animation: none; }
+  }
+</style>

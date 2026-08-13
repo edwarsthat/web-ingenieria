@@ -1,5 +1,5 @@
 ---
-title:   "Industrial heat recovery and regeneration: how to cut fuel consumption by up to 50 %"
+title:   "Heat regeneration: turning the heat you lose today into a source of efficiency"
 summary: "In many thermal processes, part of the energy the company has already paid for ends up leaving through the stack. Recovering or regenerating that heat returns it to the process, reduces fuel consumption, and advances decarbonization without switching energy sources."
 author:  "en-alejandro-vargas"
 date:    2026-08-05
@@ -7,8 +7,6 @@ lang:    "en"
 photo:   "/images/blog1.jpg"
 tags:    ["Energy efficiency", "Thermal processes", "Decarbonization"]
 ---
-
-## Heat regeneration: turning the heat you lose today into a source of efficiency
 
 A paradoxical situation occurs in many high-temperature industrial processes: fuel is burned to generate heat, part of that energy is used in the process, and a significant fraction subsequently leaves the system through still-hot combustion gases.
 

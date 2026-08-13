@@ -27,9 +27,9 @@
   },
   "nosotros": {
     "badge":        "Quiénes somos",
-    "titulo":       "Ingeniería orientada a resultados reales",
-    "desc":         "SigmaPro S.A.S. es una empresa de ingeniería orientada al desarrollo de soluciones técnicas para la industria, con un enfoque especial en sistemas térmicos, combustión, eficiencia energética y desarrollo de proyectos industriales.",
-    "desc2":        "Acompañamos a nuestros clientes en la evaluación, diseño, optimización y supervisión de proyectos industriales, ayudándolos a mejorar el desempeño de sus procesos, reducir costos energéticos y tomar decisiones técnicas basadas en análisis de ingeniería.",
+    "titulo":       "Ingeniería enfocada en resultados reales",
+    "desc":         "SigmaPro S.A.S. es una firma colombiana de ingeniería especializada en soluciones técnicas para la industria, con énfasis en sistemas térmicos, combustión, eficiencia energética y desarrollo de proyectos industriales.",
+    "desc2":        "Apoyamos a nuestros clientes en la evaluación, diseño, optimización y supervisión de proyectos industriales, ayudándoles a mejorar el rendimiento de sus procesos, reducir costos energéticos y tomar decisiones técnicas respaldadas en ingeniería.",
     "stat1Num":     "+10",
     "stat1Lab":     "Años de experiencia",
     "stat2Num":     "+120",
@@ -136,13 +136,56 @@
     "selectLanguage": "Seleccionar idioma"
   },
   "hero": {
-    "badge":    "Ingeniería · Control · Verificación",
-    "h1a":      "Menos reprocesos. Menos desviaciones.",
-    "h1b":      "Más control técnico.",
-    "sub":      "Combinamos ingeniería especializada, supervisión técnica e inspección avanzada para asegurar cumplimiento normativo y proteger la rentabilidad de sus proyectos industriales.",
-    "cta1":     "Solicitar evaluación inicial",
-    "cta2":     "Ver cómo trabajamos",
-    "labelRed": "Combustión incompleta",
-    "labelBlu": "Combustión eficiente"
+    "regionLabel": "Presentación de SigmaPro",
+    "prevLabel":   "Anterior",
+    "nextLabel":   "Siguiente",
+    "slideLabel":  "Ir al slide {n}",
+    "slides": [
+      {
+        "id":    "general",
+        "badge": "Ingeniería · Control · Verificación",
+        "h1a":   "Ingeniería enfocada",
+        "h1b":   "en resultados reales.",
+        "sub":   "Firma colombiana especializada en sistemas térmicos, combustión y eficiencia energética. Evaluamos, diseñamos y supervisamos proyectos industriales para mejorar procesos, reducir costos energéticos y respaldar cada decisión en ingeniería.",
+        "cta1":  { "label": "Solicitar evaluación inicial", "href": "/contacto" },
+        "cta2":  { "label": "Ver cómo trabajamos",          "href": "/#como-trabajamos" }
+      },
+            {
+        "id":    "blogs",
+        "badge": "Conocimiento técnico",
+        "h1a":   "Lo que aprendemos",
+        "h1b":   "lo publicamos.",
+        "sub":   "Artículos sobre sistemas térmicos, combustión y eficiencia energética, escritos por los mismos ingenieros que ejecutan los proyectos.",
+        "cta1":  { "label": "Ver artículos",        "href": "/blogs" },
+        "cta2":  { "label": "Solicitar evaluación", "href": "/contacto" }
+      },
+      {
+        "id":    "consultoria",
+        "badge": "Consultoría de ingeniería",
+        "h1a":   "Decisiones técnicas",
+        "h1b":   "respaldadas por análisis.",
+        "sub":   "Desarrollamos, optimizamos y estructuramos proyectos térmicos y energéticos con criterios de ingeniería verificables — no con estimaciones.",
+        "cta1":  { "label": "Ver el servicio",         "href": "/servicios/consultoria-de-ingenieria-especializada" },
+        "cta2":  { "label": "Hablar con un ingeniero", "href": "/contacto" }
+      },
+      {
+        "id":    "interventoria",
+        "badge": "Interventoría técnica",
+        "h1a":   "Supervisión independiente",
+        "h1b":   "donde ocurre el proceso.",
+        "sub":   "Verificamos que cada proyecto se ejecute conforme a los criterios de diseño, calidad y desempeño acordados. Las desviaciones se detectan a tiempo, no en la entrega.",
+        "cta1":  { "label": "Ver el servicio",       "href": "/servicios/interventoria-tecnica" },
+        "cta2":  { "label": "Solicitar evaluación",  "href": "/contacto" }
+      },
+      {
+        "id":    "auditoria",
+        "badge": "Auditoría técnica energética",
+        "h1a":   "25 % menos",
+        "h1b":   "en consumo energético.",
+        "sub":   "Diagnósticos que combinan inspección en campo, mediciones y análisis de ingeniería para identificar oportunidades reales de reducción de costos.",
+        "cta1":  { "label": "Ver el servicio",      "href": "/servicios/end-e-inspeccion-tecnica-avanzada" },
+        "cta2":  { "label": "Solicitar evaluación", "href": "/contacto" }
+      }
+    ]
   }
 }

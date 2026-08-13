@@ -1,5 +1,5 @@
 ---
-title:   "Recuperación y regeneración de calor industrial: cómo reducir hasta un 50 % el consumo de combustible"
+title:   "Regeneración de calor: convertir el calor que hoy se pierde en una fuente de eficiencia"
 summary: "En muchos procesos térmicos, una parte de la energía que la empresa ya pagó termina saliendo por la chimenea. Recuperar o regenerar ese calor permite devolverlo al proceso, reducir el consumo de combustible y avanzar en descarbonización sin cambiar de energético."
 author:  "es-alejandro-vargas"
 date:    2026-08-05
@@ -7,8 +7,6 @@ lang:    "es"
 photo:   "/images/blog1.jpg"
 tags:    ["Eficiencia energética", "Procesos térmicos", "Descarbonización"]
 ---
-
-## Regeneración de calor: convertir el calor que hoy se pierde en una fuente de eficiencia
 
 En muchos procesos industriales de alta temperatura ocurre una situación paradójica: se consume combustible para generar calor, se utiliza una parte de esa energía en el proceso y, posteriormente, una fracción importante abandona el sistema a través de gases de combustión todavía calientes.
 

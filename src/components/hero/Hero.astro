@@ -1,0 +1,55 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+import type { HeroSlide as HeroSlideData } from '../../data/heroSlides';
+import HeroSlide from './HeroSlide.astro';
+import HeroControls from './HeroControls.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const slides = t.hero.slides as HeroSlideData[];
+---
+
+<section
+  id="inicio"
+  class="hero-section relative w-full grid overflow-hidden min-h-[calc(70vh-4rem)]"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label={t.hero.regionLabel}
+  data-hero-carousel
+>
+  <!--
+    Grid de una sola celda: todos los slides se apilan en `col/row 1` y la
+    altura de la sección la fija el slide más alto. Sin posicionamiento
+    absoluto no hay colapso de altura ni saltos al rotar.
+  -->
+  <div class="hero-track grid col-start-1 row-start-1" data-hero-track aria-live="off">
+    {slides.map((slide, i) => (
+      <HeroSlide slide={slide} lang={lang} index={i} total={slides.length} />
+    ))}
+  </div>
+
+  {slides.length > 1 && (
+    <HeroControls
+      total={slides.length}
+      prevLabel={t.hero.prevLabel}
+      nextLabel={t.hero.nextLabel}
+      slideLabel={t.hero.slideLabel}
+    />
+  )}
+</section>
+
+<script>
+  import { setupHeroCarousel } from './carousel';
+  setupHeroCarousel();
+</script>
+
+<style>
+  .hero-section {
+    background: var(--color-inverse);
+  }
+</style>

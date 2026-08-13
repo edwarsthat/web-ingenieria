@@ -1,0 +1,107 @@
+---
+interface Props {
+  total: number;
+  prevLabel: string;
+  nextLabel: string;
+  /** Plantilla con `{n}` — ej. "Ir al slide {n}". */
+  slideLabel: string;
+}
+
+const { total, prevLabel, nextLabel, slideLabel } = Astro.props;
+
+const labelFor = (n: number) => slideLabel.replace('{n}', String(n));
+---
+
+<div class="absolute inset-x-0 bottom-8 z-20 pointer-events-none">
+  <div class="max-w-300 mx-auto w-full px-6 md:px-16">
+    <div
+      class="hero-controls flex items-center gap-3 justify-center md:justify-start pointer-events-auto"
+      data-hero-controls
+    >
+      <!-- Flecha anterior (oculta en móvil: ahí se usa swipe) -->
+      <button
+        type="button"
+        data-hero-prev
+        aria-label={prevLabel}
+        class="hero-arrow hidden md:inline-flex items-center justify-center
+               w-9 h-9 rounded-full border border-white/20 text-white/65
+               transition-colors duration-200
+               hover:text-white hover:border-white/40"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <!-- Indicadores -->
+      <div class="flex items-center gap-2">
+        {Array.from({ length: total }, (_, i) => (
+          <button
+            type="button"
+            data-hero-dot
+            data-index={i}
+            aria-label={labelFor(i + 1)}
+            aria-current={i === 0 ? 'true' : 'false'}
+            class="hero-dot px-1 py-2"
+          >
+            <span class="hero-dot__bar block" aria-hidden="true"></span>
+          </button>
+        ))}
+      </div>
+
+      <!-- Flecha siguiente -->
+      <button
+        type="button"
+        data-hero-next
+        aria-label={nextLabel}
+        class="hero-arrow hidden md:inline-flex items-center justify-center
+               w-9 h-9 rounded-full border border-white/20 text-white/65
+               transition-colors duration-200
+               hover:text-white hover:border-white/40"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  /*
+   * El indicador activo se ensancha con transform: scaleX, no con width —
+   * el ancho es propiedad de layout y dispara reflow en cada transición.
+   */
+  .hero-dot__bar {
+    width: 1.75rem;
+    height: 3px;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 0.3);
+    transform: scaleX(0.29);
+    transition:
+      transform        240ms cubic-bezier(0.25, 1, 0.5, 1),
+      background-color 240ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .hero-dot:hover .hero-dot__bar {
+    background: rgb(255 255 255 / 0.55);
+  }
+
+  .hero-dot[aria-current='true'] .hero-dot__bar {
+    transform: scaleX(1);
+    background: var(--color-green);
+  }
+
+  .hero-dot:focus-visible,
+  .hero-arrow:focus-visible {
+    outline: 2px solid var(--color-contrast);
+    outline-offset: 3px;
+    border-radius: 9999px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-dot__bar { transition: none; }
+  }
+</style>

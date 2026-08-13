@@ -27,9 +27,9 @@
   },
   "nosotros": {
     "badge":        "Who we are",
-    "titulo":       "Engineering oriented to real results",
-    "desc":         "SigmaPro S.A.S. is an engineering company focused on developing technical solutions for industry, with a special emphasis on thermal systems, combustion, energy efficiency, and industrial project development.",
-    "desc2":        "We support our clients in the evaluation, design, optimization, and supervision of industrial projects, helping them improve process performance, reduce energy costs, and make technical decisions based on engineering analysis.",
+    "titulo":       "Engineering focused on real results",
+    "desc":         "SigmaPro S.A.S. is a Colombian engineering firm specialized in technical solutions for industry, with an emphasis on thermal systems, combustion, energy efficiency, and industrial project development.",
+    "desc2":        "We support our clients in the evaluation, design, optimization, and supervision of industrial projects, helping them improve process performance, reduce energy costs, and make technical decisions backed by engineering.",
     "stat1Num":     "+10",
     "stat1Lab":     "Years of experience",
     "stat2Num":     "+120",
@@ -136,13 +136,56 @@
     "selectLanguage": "Select language"
   },
   "hero": {
-    "badge":    "Engineering · Control · Verification",
-    "h1a":      "Less rework. Less deviation.",
-    "h1b":      "More technical control.",
-    "sub":      "We combine specialized engineering, technical supervision, and advanced inspection to ensure regulatory compliance and protect the profitability of your industrial projects.",
-    "cta1":     "Request initial assessment",
-    "cta2":     "See how we work",
-    "labelRed": "Incomplete combustion",
-    "labelBlu": "Efficient combustion"
+    "regionLabel": "SigmaPro highlights",
+    "prevLabel":   "Previous",
+    "nextLabel":   "Next",
+    "slideLabel":  "Go to slide {n}",
+    "slides": [
+      {
+        "id":    "general",
+        "badge": "Engineering · Control · Verification",
+        "h1a":   "Engineering focused",
+        "h1b":   "on real results.",
+        "sub":   "A Colombian firm specialized in thermal systems, combustion, and energy efficiency. We evaluate, design, and supervise industrial projects to improve processes, reduce energy costs, and back every technical decision with engineering.",
+        "cta1":  { "label": "Request initial assessment", "href": "/contacto" },
+        "cta2":  { "label": "See how we work",            "href": "/#como-trabajamos" }
+      },
+      {
+        "id":    "consultoria",
+        "badge": "Engineering consulting",
+        "h1a":   "Technical decisions",
+        "h1b":   "backed by analysis.",
+        "sub":   "We develop, optimize, and structure thermal and energy projects using verifiable engineering criteria — not estimates.",
+        "cta1":  { "label": "View the service",   "href": "/servicios/specialized-engineering-consulting" },
+        "cta2":  { "label": "Talk to an engineer", "href": "/contacto" }
+      },
+      {
+        "id":    "interventoria",
+        "badge": "Technical supervision",
+        "h1a":   "Independent oversight",
+        "h1b":   "where the process happens.",
+        "sub":   "We verify that every project is executed according to the agreed design, quality, and performance criteria. Deviations are caught in time, not at handover.",
+        "cta1":  { "label": "View the service",   "href": "/servicios/technical-supervision" },
+        "cta2":  { "label": "Request assessment", "href": "/contacto" }
+      },
+      {
+        "id":    "auditoria",
+        "badge": "Technical energy audit",
+        "h1a":   "25% less",
+        "h1b":   "energy consumption.",
+        "sub":   "Diagnostics combining field inspection, measurements, and engineering analysis to identify real cost-reduction opportunities.",
+        "cta1":  { "label": "View the service",   "href": "/servicios/ndt-advanced-technical-inspection" },
+        "cta2":  { "label": "Request assessment", "href": "/contacto" }
+      },
+      {
+        "id":    "blogs",
+        "badge": "Technical knowledge",
+        "h1a":   "What we learn,",
+        "h1b":   "we publish.",
+        "sub":   "Articles on thermal systems, combustion, and energy efficiency, written by the same engineers who deliver the projects.",
+        "cta1":  { "label": "Read the articles", "href": "/blogs" },
+        "cta2":  { "label": "Request assessment", "href": "/contacto" }
+      }
+    ]
   }
 }
